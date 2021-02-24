@@ -1,7 +1,10 @@
+import {myRouter} from './routes.js'
+import appHeader from './cmps/app-header.cmp.js'
+
 
 const options={
     el:'#app',
-    reouter:myRouter,
+    router:myRouter,
     template:`
     <section>
         <app-header />
@@ -9,6 +12,10 @@ const options={
         <footer>footer</footer>
     </section>
     `,
+
+    components:{
+        appHeader
+    }
 }
 
 const app = new Vue(options)

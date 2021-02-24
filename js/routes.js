@@ -1,9 +1,10 @@
+import keepApp from './pages/keep-app.cmp.js'
 
 
 const routes = [
     {
         path: '/',
-        component:homePage
+        component:keepApp
     },
 ]
 
