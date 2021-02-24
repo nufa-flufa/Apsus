@@ -1,14 +1,14 @@
-import keepApp from './pages/keep-app.cmp.js'
+import keepApp from './misterKeep/pages/keep-app.cmp.js'
 import emailApp from './misterEmail/page/email-app.cmp.js'
 
 
 const routes = [
     {
-        path: '/',
+        path: '/keep',
         component:keepApp
     },
     {
-        path: '/a',
+        path: '/mail',
         component:emailApp
     }
 ]

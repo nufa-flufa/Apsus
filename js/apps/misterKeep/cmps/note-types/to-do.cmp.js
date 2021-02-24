@@ -10,8 +10,9 @@ export default {
                     <button>save</button>
                 </form>
             <ul class="todo-note">
-                <li v-if="note.content" v-for="todo in note.content">
-                    <p>{{todo}}</p>
+                <li v-if="note.info.todos" v-for="todo in note.info.todos">
+                    <p>{{todo.txt}}</p>
+                    <p>{{todo.doneAt}}</p>
                 </li>
             </ul>
             <button @click="reportVal">Done</button>
@@ -20,7 +21,7 @@ export default {
     data() {
         return {
             val: '',
-            note: {title:'to-do', content:[]}
+            note: { type: 'to-do', info: {todos:[]}}
         };
     },
     methods: {
@@ -29,7 +30,9 @@ export default {
             // console.log('val',this.val)
         },
         saveTodo(val) {
-            this.note.content.push(val)
+            if (!val) return
+            const newVal = { txt: val, doneAt: null }
+            this.note.info.todos.push(newVal)
             this.val = null;
         }
     },

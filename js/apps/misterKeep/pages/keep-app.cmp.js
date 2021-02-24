@@ -10,7 +10,7 @@ export default {
         <button @click="getType('to-do')"> Click for ToDo</button>
         <button @click="getType('textBox')"> Click for Img</button>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote"/>
-        <notes-display  v-if="userNotes" :notes="userNotes" />
+        <notes-display  v-if="notes" :notes="notes" />
     </section>
     `,
     data() {
@@ -26,14 +26,17 @@ export default {
             const type = keepService.getByType(val)
             this.noteType = type
         },
+
         keepNote(note){
-            this.userNotes.push(note)
+            this.notes.push(note)
             this.noteType = null;
         }
+
 
     },
     created(){
         this.notes = keepService.getNotes()
+        console.log(this.notes)
     },
     components:{
         noteAdd,

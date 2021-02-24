@@ -18,12 +18,18 @@ export default {
     data() {
         return {
             val: '',
-            note: { title: 'textbox', content: null }
+            note: {
+                type: 'text-box',
+                isPinned: false,
+                info: {
+                    txt: "Fullstack Me Baby!"
+                }
+            }
         };
     },
     methods: {
         reportVal() {
-            this.note.content= [this.val]
+            this.note.info.txt = this.val
             this.$emit("setVal", this.note);
         }
     },
