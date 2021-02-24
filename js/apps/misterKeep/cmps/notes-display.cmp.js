@@ -5,13 +5,17 @@ export default {
     props: ['notes'],
     template: `
     <section class="notes-display">
-        <template v-for="note in notes" class="note">
-            <header>hedaer</header>
-           <component :is="note.type" :info="note.info"></component>
-           <!-- <p>{{note}}</p> -->
+        <template v-for="note in notes">
+           <component :is="note.type" :note="note" @deleteNote="deleteNote"></component>
            </template>
     </section>
     `,
+    methods:{
+        deleteNote(note){
+            this.$emit('delete', note.id)
+        },
+
+    },
     created() {
         console.log(this.notes)
     },

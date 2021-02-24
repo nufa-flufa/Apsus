@@ -1,54 +1,14 @@
-/* BASICS */
-* {
-    box-sizing: border-box;
-}
+@import './basic/main-cmps.css';
+@import './basic/a.css';
+@import './apps/keep/cmp/note.css';
+@import './apps/keep/cmp/notes-display.css';
+@import './apps/keep/pages/main-page.css';
 
-body {
-    margin: 0;
-    text-align: center;
-}
-
-/* HELPERS */
-.btn {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
-/* HEADER */
-header {
-    height: 50px;
-    background-color: aquamarine;
-    border-bottom: 2px solid black;
-}
 
 /* FOOTER */
-footer {
-    bottom: 0;
-    background-color: aquamarine;
-    border-top: 2px solid black;
-    height: 50px;
-}
+
 
 /* NOTES-DISPLAY */
-.note {
-    width: 300px;
-    background-color: blanchedalmond;
-    border: 1px solid green;
-    margin-right: 10px;
-
-}
-
-/* TO-DO */
-.todo-note {
-    border: 2px solid black;
-    width: 300px;
-    height: 300px;
-    text-align: start;
-}
-
-
 
 
 
