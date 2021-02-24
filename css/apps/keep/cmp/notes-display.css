@@ -1,5 +1,5 @@
 .notes-display{
     display: flex;
-    width: 1200px;
-    margin: auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }

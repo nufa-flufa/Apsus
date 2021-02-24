@@ -1,7 +1,20 @@
 .keep-app{
-    height:80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 1500px;
+    margin: 0 auto;
+    font-family: noto-sans-medium;
+    display: grid;
+    grid-template-columns: 1200px 300px;
+    grid-template-rows: 400px 1fr;
 }
+
+.add-zone{
+    grid-area: 1/2/3/3;
+}
+.add-note{
+    grid-area: 1/1/2/2;
+    /* background-color: green; */
+}
+.notes-display{
+    grid-area: 2/1/3/2;
+}
+

@@ -38,18 +38,18 @@ function makeId(length = 5) {
     return text;
 }
 function deleteNote(noteId){
-        storageService.remove(NOTES_KEY, noteId)
+        return storageService.remove(NOTES_KEY, noteId)
 
 }
 
 var gNotes = [
-    // {
-    //     type: "textbox",
-    //     isPinned: true,
-    //     info: {
-    //         txt: "Fullstack Me Baby!"
-    //     }
-    // },
+    {
+        type: "textbox",
+        isPinned: true,
+        info: {
+            txt: "Fullstack Me Baby!"
+        }
+    },
     // {
     //     type: "NoteImg",
     //     info: {

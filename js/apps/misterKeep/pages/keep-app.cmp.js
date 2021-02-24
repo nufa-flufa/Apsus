@@ -5,17 +5,17 @@ import notesDisplay from '../cmps/notes-display.cmp.js'
 export default {
     template: `
     <section class="keep-app">
-        <h2>{{header}}</h2>
-        <button @click="getType('textBox')"> Click for Note</button>
-        <button @click="getType('to-do')"> Click for ToDo</button>
-        <button @click="getType('textBox')"> Click for Img</button>
+        <div class="add-zone">
+            <button class="btn" @click="getType('textBox')"> Click for Note</button>
+            <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
+            <button  class="btn" @click="getType('textBox')"> Click for Img</button>
+        </div>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote"/>
         <notes-display  v-if="notes" :notes="notes" @delete="deleteNote"/>
     </section>
     `,
     data() {
         return {
-            header: 'Hello',
             notes: '',
             noteType: null,
             userNotes: [],
@@ -29,6 +29,7 @@ export default {
         },
         getType(val) {
             const type = keepService.getByType(val)
+            console.log('type:',type)
             this.noteType = type
         },
 
@@ -40,6 +41,7 @@ export default {
         },
         deleteNote(noteId) {
             keepService.deleteNote(noteId)
+                .then(()=>this.loadNotes())
         }
     },
     created() {

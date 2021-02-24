@@ -1,14 +1,14 @@
 
-.note {
-    
+.note {    
     width: 200px;
-    /* min-height: 200px; */
+    min-height: 200px;
     background-color: rgb(193, 229, 231);
     box-shadow: 0px 4px 9px 0px #00303f6e;
     margin: 10px;
     text-align: start;
     display: flex;
     flex-direction: column;
+    padding-left: 30px;
 }
 
 .note button{
@@ -16,7 +16,3 @@
     margin: 10px;
 }
 
-.note ul{
-    margin: 0;
-    padding-top: 2rem;
-}
