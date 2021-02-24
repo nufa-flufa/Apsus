@@ -1,4 +1,6 @@
-import {storageService } from '../../../service/async-storage.service.js';
+import {
+  storageService
+} from '../../../service/async-storage.service.js'
 
 const MAILS_KEY = 'mails'
 const gMails = [{

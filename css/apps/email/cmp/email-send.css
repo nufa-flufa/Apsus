@@ -1,0 +1,36 @@
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.mail-body{
+    height: 270px;
+    resize: none;
+}
+
+.email-form{
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.mail-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+    font-weight: bold;
+    height: 2em;
+    margin-bottom: 3px;
+}
+
+.exit-btn{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.mail-logo{
+    font-size: 1.7em;
+    margin-left: 5px;
+}

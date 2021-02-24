@@ -1,124 +1,18 @@
-/* BASICS */
-* {
-    box-sizing: border-box;
-}
+@import './basic/main-cmps.css';
+@import './basic/a.css';
+@import './apps/keep/cmp/note.css';
+@import './apps/keep/cmp/notes-display.css';
+@import './apps/keep/pages/main-page.css';
+@import './css/apps/email/pages/email-app.css';
+@import './css/apps/email/cmp/emailNav.css';
 
-body {
-    margin: 0;
-    text-align: center;
-}
-
-/* HELPERS */
-.btn {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
-/* HEADER */
-header {
-    height: 50px;
-    background-color: aquamarine;
-    border-bottom: 2px solid black;
-}
 
 /* FOOTER */
-footer {
-    bottom: 0;
-    background-color: aquamarine;
-    border-top: 2px solid black;
-    height: 50px;
-}
+
 
 /* NOTES-DISPLAY */
-.note {
-    width: 300px;
-    background-color: blanchedalmond;
-    border: 1px solid green;
-    margin-right: 10px;
-
-}
-
-/* TO-DO */
-.todo-note {
-    border: 2px solid black;
-    width: 300px;
-    height: 300px;
-    text-align: start;
-}
-
-
 
 
 
 /* Mails */
 
-.mail-container {
-    display: flex;
-}
-
-.mail-list {
-    list-style: none;
-    width: 80%;
-}
-
-.world {
-    width: 20%;
-}
-
-.mail-preview-container {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.email-preview {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-around;
-}
-
-.mail-preview-subject {
-    flex-grow: 1;
-}
-
-.read {
-    background-color: rgba(49, 49, 49, 0.3);
-}
-
-.nav-btn {
-    padding: 5px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    width: 150px;
-    background-color: lightcyan;
-}
-
-.add-mail-modal {
-    background-color: red;
-    position: absolute;
-    bottom: 0px;
-    right: 5%;
-    width: 60%;
-    height: 40%
-}
-
-.email-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.mail-input{
-    width: 95%;
-    margin-left: 2.5%;
-}
-
-.mail-body{
-    width: 95%;
-    margin-left: 2.5%;
-    height: 250px;
-}
-
-@import url("/css/apps/email/cmp/emailNav.css");

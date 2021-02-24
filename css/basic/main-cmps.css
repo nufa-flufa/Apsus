@@ -1,0 +1,41 @@
+@font-face{
+    font-family: luckiest-guy;
+    src:url('../font/LuckiestGuy-Regular.ttf')
+}
+
+.app-header {
+    height:100px;
+    background-color: #E6F4F1;
+    color:#00303F;
+    box-shadow: 4px -2px 15px #00303f87;
+    margin-bottom: 20px;
+}
+
+.main-nav{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-family: luckiest-guy;
+    font-size: 4.375rem;
+}
+nav{
+    font-size: 20px;
+}
+
+.active-link {
+    color:#00303F;
+}
+
+
+/* FOOTER */
+footer {
+    height: 100px;
+    background-color: #E6F4F1;
+    color:#00303F;
+    box-shadow: 1px 4px 13px #00303F;
+}

@@ -1,10 +1,8 @@
+// import {}
 export default {
     props: ['info'],
     template: `
           <section>
-              <!-- <datalist :id="listId">
-                  <option v-if="info.opts" v-for="opt in info.opts" :value="opt" />
-              </datalist> -->
               <label>
                   {{info.label}}
                 </label>  
@@ -19,6 +17,7 @@ export default {
         return {
             val: '',
             note: {
+                // id:,
                 type: 'text-box',
                 isPinned: false,
                 info: {

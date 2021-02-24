@@ -1,0 +1,54 @@
+@import '/css/apps/email/cmp/email-send.css';
+
+.mail-container {
+    display: flex;
+    width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mail-list {
+    list-style: none;
+    width: 80%;
+}
+
+.world {
+    width: 20%;
+}
+
+.mail-preview-container {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.email-preview {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mail-preview-subject {
+    flex-grow: 1;
+}
+
+.read {
+    background-color: rgba(49, 49, 49, 0.3);
+}
+
+.nav-btn {
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 150px;
+    background-color: lightcyan;
+}
+
+.add-mail-modal {
+    background-color: #E6F4F1;
+    position: absolute;
+    bottom: 0px;
+    right: 5%;
+    width: 60%;
+    height: 40%
+}
+

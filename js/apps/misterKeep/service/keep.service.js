@@ -1,25 +1,55 @@
 'use strict'
+import {storageService} from '../../../service/async-storage.service.js'
 export const keepService = {
     getNotes,
-    getByType
+    getByType,
+    makeId,
+    deleteNote,
+    saveNote,
 }
 
+const NOTES_KEY = 'notes'
+
 function getNotes(){
-    return notes
+   return storageService.query(NOTES_KEY)
+        .then(notes=>{
+            if(!notes || !notes.length) {
+                storageService.postMany(NOTES_KEY, gNotes)
+                return gNotes
+            }
+            else return notes
+        })
+}
+
+function saveNote(note){
+   return storageService.post(NOTES_KEY, note)
 }
 
 function getByType(type){
     return survey.cmps.find(cmp => cmp.type === type)
 }
 
-var notes = [
-    {
-        type: "textbox",
-        isPinned: true,
-        info: {
-            txt: "Fullstack Me Baby!"
-        }
-    },
+function makeId(length = 5) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
+function deleteNote(noteId){
+        storageService.remove(NOTES_KEY, noteId)
+
+}
+
+var gNotes = [
+    // {
+    //     type: "textbox",
+    //     isPinned: true,
+    //     info: {
+    //         txt: "Fullstack Me Baby!"
+    //     }
+    // },
     // {
     //     type: "NoteImg",
     //     info: {
