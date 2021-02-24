@@ -6,9 +6,9 @@ const options={
     el:'#app',
     router:myRouter,
     template:`
-    <section>
+    <section class="app-container">
         <app-header />
-        <router-view />
+        <router-view  class="main-screen"/>
         <footer>footer</footer>
     </section>
     `,

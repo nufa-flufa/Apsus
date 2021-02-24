@@ -6,6 +6,7 @@ export default {
               <label>
                   {{info.label}}
                 </label>  
+                <input type="text" placeholder="give a title to your note" v-model="note.info.title" /> 
                 <textarea  placeholder=""  rows="10"
                   cols="50" v-model="val" @change="reportVal" :list="listId" required >
               </textarea>
@@ -17,11 +18,11 @@ export default {
         return {
             val: '',
             note: {
-                // id:,
                 type: 'text-box',
                 isPinned: false,
                 info: {
-                    txt: "Fullstack Me Baby!"
+                    title:'',
+                    txt: '',
                 }
             }
         };

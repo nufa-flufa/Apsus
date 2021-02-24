@@ -1,8 +1,9 @@
-@import './basic/main-cmps.css';
 @import './basic/a.css';
+@import './basic/main-cmps.css';
 @import './apps/keep/cmp/note.css';
 @import './apps/keep/cmp/notes-display.css';
 @import './apps/keep/pages/main-page.css';
+@import './apps/keep/cmp/add-note-nav.css';
 
 
 /* FOOTER */

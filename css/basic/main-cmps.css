@@ -2,13 +2,23 @@
     font-family: luckiest-guy;
     src:url('../font/LuckiestGuy-Regular.ttf')
 }
+@font-face{
+    font-family: noto-sans-medium;
+    src: url('../font/NotoSansJP-Medium.otf');
+}
+
+.app-container{
+    display: grid;
+    grid-template-rows: 70px 1fr 30px ;
+}
 
 .app-header {
-    height:100px;
+    grid-row: 1/2;
+    /* height:100px; */
     background-color: #E6F4F1;
     color:#00303F;
     box-shadow: 4px -2px 15px #00303f87;
-    
+    margin-bottom:20px ;
 }
 
 .main-nav{
@@ -21,7 +31,7 @@
 
 .logo{
     font-family: luckiest-guy;
-    font-size: 4.375rem;
+    font-size: 3rem;
 }
 nav{
     font-size: 20px;
@@ -30,11 +40,13 @@ nav{
 .active-link {
     color:#00303F;
 }
-
+/* .main-screen{ */
+    
 
 /* FOOTER */
 footer {
-    height: 100px;
+    grid-row: 3/4;
+    height: 30px;
     background-color: #E6F4F1;
     color:#00303F;
     box-shadow: 1px 4px 13px #00303F;

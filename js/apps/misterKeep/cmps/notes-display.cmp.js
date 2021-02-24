@@ -1,5 +1,5 @@
 import toDo from './todo-display.cmp.js'
-import textbox from './textbox-display.cmp.js'
+import textBox from './textbox-display.cmp.js'
 
 export default {
     props: ['notes'],
@@ -21,6 +21,6 @@ export default {
     },
     components:{
         toDo,
-        textbox,
+        textBox,
     }
 }
