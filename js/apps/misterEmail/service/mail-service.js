@@ -16,11 +16,11 @@ const gMails = [{
   "id": "OXe81awNskc",
   "subject": "Bla Bla",
   "body": "muki puki shuki bla bla",
-  "to": ['Stav'],
+  "to": ['me'],
   "sentAt": 1551149930594,
   "isStar": true,
   "isRead": true,
-  "from": 'me',
+  "from": 'Stav',
 },{
   "id": "0de81awNskc",
   "subject": "Read meeeee",

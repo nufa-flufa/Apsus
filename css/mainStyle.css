@@ -1,15 +1,15 @@
 /* BASICS */
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     text-align: center;
 }
 
 /* HELPERS */
-.btn{
+.btn {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
@@ -17,13 +17,14 @@ body{
 
 
 /* HEADER */
-header{
+header {
     height: 50px;
     background-color: aquamarine;
     border-bottom: 2px solid black;
 }
+
 /* FOOTER */
-footer{
+footer {
     bottom: 0;
     background-color: aquamarine;
     border-top: 2px solid black;
@@ -31,7 +32,7 @@ footer{
 }
 
 /* NOTES-DISPLAY */
-.note{
+.note {
     width: 300px;
     background-color: blanchedalmond;
     border: 1px solid green;
@@ -40,9 +41,47 @@ footer{
 }
 
 /* TO-DO */
-.todo-note{
+.todo-note {
     border: 2px solid black;
     width: 300px;
     height: 300px;
     text-align: start;
+}
+
+
+
+
+
+/* Mails */
+
+.mail-container {
+    display: flex;
+}
+
+.mail-list {
+    list-style: none;
+    width: 80%;
+}
+
+.world {
+    width: 20%;
+}
+
+.mail-preview-container {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.email-preview {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mail-preview-subject {
+    flex-grow: 1;
+}
+
+.read {
+    background-color: rgba(49, 49, 49, 0.3);
 }

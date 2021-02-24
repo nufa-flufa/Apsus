@@ -1,9 +1,14 @@
+import mailPreview from './email-preview.cmp.js'
+
 export default {
     props: ['mails'],
     template: `
-    <ul class="email-list">
-        <li v-for="mail in mails" :key="mail.id" class="mail-preview-container">
-            as
+    <ul class="mail-list">
+        <li v-for="mail in mails" :key="mail.id" class="mail-preview-container" >
+            <mail-preview :mail="mail"/>
+            <div class="mail-btn-container">
+                <button @click="remove(mail.id)">X</button>
+            </div>
         </li>
     </ul>
     `,
@@ -16,8 +21,8 @@ export default {
         },
     },
     created() {
-        console.log('sad');
     },
     components: {
+        mailPreview,
     }
 }

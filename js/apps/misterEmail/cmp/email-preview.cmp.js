@@ -1,14 +1,20 @@
 export default {
-    props: ['email'],
+    props: ['mail'],
     template: `
-    <section class="email-preview">
-        <div>
-            <!--<p>Title: {{email.subject}}</p>-->
-        </div>
+    <section class="email-preview" :class="isRead">
+            <p>{{isStar}}</p>
+            <p>from: {{mail.from}}</p>
+            <p class="mail-preview-subject">subject: {{mail.subject}}</p>
     </section>
     `,
-    computed: {},
+    computed: {
+        isStar(){
+            return (this.mail.isStar)? '🌟' : '☆';
+        },
+        isRead(){
+            return (this.mail.isRead)? 'read' : '';
+        }
+    },
     created(){
-        console.log(email);
     }
 }

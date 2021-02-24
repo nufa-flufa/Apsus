@@ -7,7 +7,7 @@ import {
 export default {
     template: `
         <section class="mail-container">
-            <section><!-- NAV -->
+            <section class="world"><!-- NAV -->
             Hello world
             </section>
             <email-list :mails="mailsToShow"/><!-- email list -->
