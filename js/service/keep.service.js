@@ -53,9 +53,9 @@ var survey =
             }
         },
         {
-            type: 'selectBox',
+            type: 'to-do',
             info: {
-                label: 'How was it:',
+                label: 'Write your To Do\'s',
                 opts: ['Great', 'Fine', 'Crap', 'Worst Ever']
             }
         },

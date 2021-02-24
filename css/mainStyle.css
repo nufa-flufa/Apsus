@@ -29,3 +29,20 @@ footer{
     border-top: 2px solid black;
     height: 50px;
 }
+
+/* NOTES-DISPLAY */
+.note{
+    width: 300px;
+    background-color: blanchedalmond;
+    border: 1px solid green;
+    margin-right: 10px;
+
+}
+
+/* TO-DO */
+.todo-note{
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+    text-align: start;
+}

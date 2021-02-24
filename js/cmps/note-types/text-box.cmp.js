@@ -7,21 +7,24 @@ export default {
               </datalist> -->
               <label>
                   {{info.label}}
-                  <textarea  placeholder=""  rows="10"
-                    cols="50" v-model="val" @change="reportVal" :list="listId" required >
-                </textarea>
-              </label>  
+                </label>  
+                <textarea  placeholder=""  rows="10"
+                  cols="50" v-model="val" @change="reportVal" :list="listId" required >
+              </textarea>
+              <button @click="reportVal">Done</button>
+
           </section>
           `,
     data() {
         return {
-            val: ""
+            val: '',
+            note: { title: 'textbox', content: null }
         };
     },
     methods: {
         reportVal() {
-            this.$emit("setVal", this.val);
-            // console.log('val',this.val)
+            this.note.content= [this.val]
+            this.$emit("setVal", this.note);
         }
     },
     computed: {

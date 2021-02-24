@@ -1,4 +1,5 @@
 import textBox from './note-types/text-box.cmp.js'
+import toDo from './note-types/to-do.cmp.js'
 
 export default {
     props: ['noteType'],
@@ -7,25 +8,25 @@ export default {
         <h2>Note</h2>
         <form @submit.prevent="save">
             <component :is="noteType.type" :info="noteType.info" @setVal="saveNote"></component>
-            <button>Click</button>
         </form>
     </section>
     `,
 
-    data(){
-        return{
+    data() {
+        return {
 
         }
     },
-    methods:{
-        save(val){
+    methods: {
+        save(val) {
             console.log(val)
         },
-        saveNote(txt){
-            console.log(txt)
+        saveNote(note) {
+            this.$emit('keep-note', note)
         }
     },
-    components:{
-        textBox
+    components: {
+        textBox,
+        toDo,
     }
 }
