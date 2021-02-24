@@ -1,4 +1,5 @@
 import emailList from '../cmp/email-list.cmp.js'
+import emailNav from '../cmp/email-nav.cmp.js'
 import {
     mailService
 } from '../service/mail-service.js'
@@ -7,9 +8,7 @@ import {
 export default {
     template: `
         <section class="mail-container">
-            <section class="world"><!-- NAV -->
-            Hello world
-            </section>
+            <email-nav/><!-- NAV -->
             <email-list :mails="mailsToShow"/><!-- email list -->
 
         </section>
@@ -27,7 +26,7 @@ export default {
                     this.mails = mails
                 })
         },
-        removeBook(mailId) {
+        removeMail(mailId) {
             mailService.remove(mailId)
                 .then(this.loadMails)
         },
@@ -45,5 +44,6 @@ export default {
     },
     components: {
         emailList,
+        emailNav,
     }
 }
