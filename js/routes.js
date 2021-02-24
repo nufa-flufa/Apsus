@@ -1,5 +1,5 @@
-import keepApp from './app/misterKeep/pages/keep-app.cmp.js'
-import emailApp from './app/misterEmail/page/email-app.cmp.js'
+import keepApp from './apps/misterKeep/pages/keep-app.cmp.js'
+import emailApp from './apps/misterEmail/page/email-app.cmp.js'
 
 
 const routes = [

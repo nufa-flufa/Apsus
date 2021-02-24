@@ -1,6 +1,4 @@
-import {
-  storageService
-} from '../../service/async-storage.service.js'
+import {storageService } from '../../../service/async-storage.service.js';
 
 const MAILS_KEY = 'mails'
 const gMails = [{
@@ -69,8 +67,8 @@ function getEmptyMail() {
     "subject": "",
     "body": "",
     "to": [],
-    "sentAt": 2020,
-    "isStar": true,
+    "sentAt": null,
+    "isStar": false,
     "isRead": false,
     "from": 'me',
   }

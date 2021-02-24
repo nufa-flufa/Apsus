@@ -85,3 +85,40 @@ footer {
 .read {
     background-color: rgba(49, 49, 49, 0.3);
 }
+
+.nav-btn {
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 150px;
+    background-color: lightcyan;
+}
+
+.add-mail-modal {
+    background-color: red;
+    position: absolute;
+    bottom: 0px;
+    right: 5%;
+    width: 60%;
+    height: 40%
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.mail-input{
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.mail-body{
+    width: 95%;
+    margin-left: 2.5%;
+    height: 250px;
+}
+
+@import url("/css/apps/email/cmp/emailNav.css");

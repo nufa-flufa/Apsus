@@ -1,5 +1,6 @@
 import emailList from '../cmp/email-list.cmp.js'
 import emailNav from '../cmp/email-nav.cmp.js'
+import emailSend from '../cmp/email-send.cmp.js'
 import {
     mailService
 } from '../service/mail-service.js'
@@ -8,15 +9,16 @@ import {
 export default {
     template: `
         <section class="mail-container">
-            <email-nav/><!-- NAV -->
-            <email-list :mails="mailsToShow"/><!-- email list -->
-
+            <email-nav @filter="setFilter" @sendMail="sendMail"/><!-- NAV -->
+            <email-list :mails="mailsToShow" @remove="removeMail"/><!-- email list -->
+            <email-send v-if="sening"/>
         </section>
     `,
     data() {
         return {
             mails: [], //filled by nav
-            filterBy: null
+            filterBy: 'inbox',
+            sening:true,
         }
     },
     methods: {
@@ -31,7 +33,11 @@ export default {
                 .then(this.loadMails)
         },
         setFilter(filterBy) {
+            console.log(filterBy);
             this.filterBy = filterBy
+        },
+        sendMail(){
+            
         }
     },
     computed: {
@@ -45,5 +51,6 @@ export default {
     components: {
         emailList,
         emailNav,
+        emailSend,
     }
 }
