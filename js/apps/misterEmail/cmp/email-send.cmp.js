@@ -1,6 +1,8 @@
 import {
     mailService
 } from '../service/mail-service.js'
+import { eventBus } from '../../../service/event-bus.service.js'
+
 
 export default {
     template: `
@@ -24,6 +26,11 @@ export default {
             this.mail.sentAt = Date.now();
             mailService.save(this.mail).then(()=>{
                 this.$emit('send');
+                const msg = {
+                    txt: 'Mail sent',
+                    type: 'success'
+                }
+                eventBus.$emit('show-msg', msg)
             });
         },
         closeMail(){

@@ -40,6 +40,8 @@ export default {
             mailService.getById(id)
                 .then(mail => {
                     this.mail = mail;
+                    this.mail.isRead = true;
+                    mailService.save(this.mail);
                 })
         },
         reply() {
@@ -47,15 +49,16 @@ export default {
             if (!this.isEdit) {
                 this.mail.body += `
             
-            //Re-Answer -- write your answer below this line`
+            //Re-Answer -- write your answer below this line
+            
+            `
                 this.isEdit = true;
             }
-
         },
         send() {
             const reMail = mailService.getEmptyMail()
             reMail.body = this.mail.body;
-            reMail.to = this.mail.from;
+            reMail.to = [].push(this.mail.from);
             reMail.subject = 'Re\\ ' + this.mail.subject;
             reMail.sentAt = Date.now();
             mailService.save(reMail).then(() => {
@@ -81,7 +84,7 @@ export default {
             return sentDate.toLocaleString();
         },
         getTo() {
-            return this.mail.to.join(',');
+            return this.mail.to;
         },
         replyText() {
             return (this.isReplay) ? 'close' : 'replay';
