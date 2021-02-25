@@ -10,7 +10,8 @@ export default {
     template: `
         <section class="mail-container">
             <email-nav @filter="setFilter" @openMail="toggleMail"/><!-- NAV -->
-            <email-list :mails="mailsToShow" @remove="removeMail" @stared="stared"/><!-- email list -->
+            <email-list :mails="mailsToShow" @remove="removeMail" @stared="stared"/><!-- email list --> 
+            <!--<router-view :mails="mailsToShow" @remove="removeMail" @stared="stared"/>-->
             <email-send v-if="sending" @send="sendMail" />
         </section>
     `,

@@ -5,12 +5,10 @@ export default {
     template: `
     <ul class="mail-list">
         <li v-for="(mail, idx) in mails" :key="mail.id" class="mail-preview-container" :class="{read: mail.isRead}" >
-            <!--<router-link :to="'/mail/'+mail.id">-->
                 <mail-preview :mail="mail" @stared="stared" />
                 <div class="mail-btn-container">
                     <button @click="remove(mail.id)">X</button>
                 </div>
-            <!--</router-link>-->
         </li>
     </ul>
     `,

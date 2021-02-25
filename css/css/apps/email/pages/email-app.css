@@ -4,7 +4,7 @@
 .mail-container {
     display: flex;
     width: 1200px;
-    align-items: center;
+    height: 89vh;
     justify-content: space-between;
 }
 
@@ -24,8 +24,8 @@
     background-color: rgb(212, 205, 205);
 }
 
-.mail-preview-container:hover{
-    background-color: rgba(42, 39, 54,0.5);
+.mail-preview-container:hover {
+    background-color: rgba(42, 39, 54, 0.5);
 }
 
 .email-preview {
@@ -47,7 +47,20 @@
     position: absolute;
     bottom: 0px;
     right: 5%;
-    width: 60%;
+    width: 800px;
     height: 40%
 }
 
+.star{
+    color: yellow;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    align-items: center;
+    display: flex;
+}
+
+.stared{
+    color: black;
+}

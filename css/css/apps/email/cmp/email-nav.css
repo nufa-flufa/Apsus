@@ -4,9 +4,15 @@
 }
 
 .nav-btn {
+    margin-right: 5px;
     padding: 5px;
     margin-bottom: 15px;
     border-radius: 10px;
     width: 150px;
     background-color: lightcyan;
+}
+
+.nav-bar{
+    
+    border-right: 2px solid rgba(56, 56, 56,0.2);
 }
