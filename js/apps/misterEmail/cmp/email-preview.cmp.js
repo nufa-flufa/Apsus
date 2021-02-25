@@ -2,10 +2,10 @@ export default {
     props: ['mail'],
     template: `
     <section class="email-preview">
-            <p class="star" :class="{stared: !isStar}" @click="stared">{{isStarText}}</p>
-            <p>from: {{mail.from}}</p>
-            <p class="mail-preview-subject">subject: {{mail.subject}}</p>
-            <p>{{getDate}}</p>
+            <p class="star" :class="{stared: !isStar}" @click.stop="stared">{{isStarText}}</p>
+            <p class="from">{{mail.from}}</p>
+            <p class="mail-preview-subject">subject: {{subjectDeco}}</p>
+            <p class="date">{{getDate}}</p>
     </section>
     `,
     computed: {
@@ -18,7 +18,10 @@ export default {
         },
         isStarText(){
             return (this.isStar)? '★' : '☆';
-        }
+        },
+        subjectDeco(){
+            return this.mail.subject.substring(0,45);
+        },
     },
     methods:{
         stared(){

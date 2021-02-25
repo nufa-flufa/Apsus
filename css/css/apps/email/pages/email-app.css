@@ -21,11 +21,11 @@
     border-radius: 15px;
     display: flex;
     margin-bottom: 5px;
-    background-color: rgb(212, 205, 205);
+    background-color: rgba(28, 25, 158, 0.055);
 }
 
 .mail-preview-container:hover {
-    background-color: rgba(42, 39, 54, 0.5);
+    background-color: rgba(69, 67, 80, 0.5);
 }
 
 .email-preview {
@@ -34,12 +34,10 @@
     justify-content: space-around;
 }
 
-/*.mail-preview-subject {
-    flex-grow: 1;
-}*/
 
 .read {
     background-color: rgba(46, 54, 77, 0.3);
+    font-weight: bold;
 }
 
 .add-mail-modal {
@@ -51,16 +49,35 @@
     height: 40%
 }
 
-.star{
-    color: yellow;
+.from {
+    width: 20%;
+}
+
+.mail-preview-subject {
+    width: 50%;
+}
+
+.date {
+    width: 20%;
+}
+
+.star {
+    color: rgb(226, 223, 53);
     font-weight: bold;
     font-size: 1.3em;
     margin-bottom: 0px;
     margin-top: 0px;
+    margin-left:5px;
     align-items: center;
     display: flex;
+    cursor: pointer;
+    width: 10%;
 }
 
-.stared{
+.stared {
     color: black;
+}
+
+.pointer {
+    cursor: pointer;
 }

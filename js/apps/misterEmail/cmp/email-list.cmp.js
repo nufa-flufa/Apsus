@@ -1,13 +1,15 @@
 import mailPreview from './email-preview.cmp.js'
+import mailFilter from './email-filter.cmp.js'
 
 export default {
     props: ['mails'],
     template: `
     <ul class="mail-list">
-        <li v-for="(mail, idx) in mails" :key="mail.id" class="mail-preview-container" :class="{read: mail.isRead}" >
+        <mail-filter @setSort="setSort"/>
+        <li v-for="(mail, idx) in mails" :key="mail.id" class="mail-preview-container" :class="{read: !mail.isRead}" @click="sendToReply(mail.id)" >
                 <mail-preview :mail="mail" @stared="stared" />
                 <div class="mail-btn-container">
-                    <button @click="remove(mail.id)">X</button>
+                    <button @click.stop="remove(mail.id)" class="pointer">X</button>
                 </div>
         </li>
     </ul>
@@ -22,10 +24,17 @@ export default {
         stared(mail) {
             this.$emit('stared', mail)
         },
+        sendToReply(id) {
+            this.$router.push('/mail/' + id);
+        },
+        setSort(by) {
+            this.$emit('setSort', by);
+        },
     },
     computed: {},
     created() {},
     components: {
         mailPreview,
+        mailFilter,
     }
 }
