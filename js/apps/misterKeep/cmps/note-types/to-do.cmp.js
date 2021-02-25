@@ -21,7 +21,9 @@ export default {
     data() {
         return {
             val: '',
-            note: { type: 'to-do', info: {todos:[]}}
+            note: { type: 'to-do',
+             info: {todos:[]}
+            }
         };
     },
     methods: {
@@ -30,7 +32,7 @@ export default {
         },
         saveTodo(val) {
             if (!val) return
-            const newVal = { txt: val, doneAt: null }
+            const newVal = { txt: val, isDone:false }
             this.note.info.todos.push(newVal)
             this.val = null;
         }

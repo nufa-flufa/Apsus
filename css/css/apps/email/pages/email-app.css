@@ -1,9 +1,10 @@
 @import '/css/apps/email/cmp/email-send.css';
+@import '/css/css/apps/email/cmp/email-nav.css';
 
 .mail-container {
     display: flex;
     width: 1200px;
-    align-items: center;
+    height: 89vh;
     justify-content: space-between;
 }
 
@@ -17,8 +18,14 @@
 }
 
 .mail-preview-container {
+    border-radius: 15px;
     display: flex;
     margin-bottom: 5px;
+    background-color: rgb(212, 205, 205);
+}
+
+.mail-preview-container:hover {
+    background-color: rgba(42, 39, 54, 0.5);
 }
 
 .email-preview {
@@ -27,20 +34,12 @@
     justify-content: space-around;
 }
 
-.mail-preview-subject {
+/*.mail-preview-subject {
     flex-grow: 1;
-}
+}*/
 
 .read {
-    background-color: rgba(49, 49, 49, 0.3);
-}
-
-.nav-btn {
-    padding: 5px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    width: 150px;
-    background-color: lightcyan;
+    background-color: rgba(46, 54, 77, 0.3);
 }
 
 .add-mail-modal {
@@ -48,7 +47,20 @@
     position: absolute;
     bottom: 0px;
     right: 5%;
-    width: 60%;
+    width: 800px;
     height: 40%
 }
 
+.star{
+    color: yellow;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    align-items: center;
+    display: flex;
+}
+
+.stared{
+    color: black;
+}

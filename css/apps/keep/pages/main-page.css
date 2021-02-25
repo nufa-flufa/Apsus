@@ -2,8 +2,8 @@
     margin-left: auto;
     font-family: noto-sans-medium;
     display: grid;
-    grid-template-columns: 900px 300px;
-    grid-template-rows: 1כר 1fr;
+    /* grid-template-columns: 900px 300px; */
+    /* grid-template-rows: 1כר 1fr; */
     margin-bottom: 30px;
 }
 

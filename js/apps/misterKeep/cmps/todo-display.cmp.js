@@ -4,14 +4,18 @@ export default{
     props:['note'],
     template:`
         <section class="todo note">
-            <button class="btn" @click="deleteTodo">X</button>
-            <ul >
+            <header>
+                <button class="btn" @click="deleteTodo">X</button>
+            </header>
+            <div class="note-content">
+            <ul>
                 <li  v-for="todo in note.info.todos" >
-                <input type="checkbox" name="todo" value="todo" />
+                <input type="checkbox" name="todo" value="todo"  />
                 <label for="todo" >{{todo.txt}} {{dateFormat}}</label>    
                 </li>
             </ul>
             <button  @click="editTodo" >Edit</button>
+            </div>
         </section>
     `,
     methods:{

@@ -30,6 +30,33 @@ const gMails = [{
   "isStar": false,
   "isRead": true,
   "from": 'me',
+},{
+  "id": "0deac945skc",
+  "subject": "Come work with us",
+  "body": "come work with us at (random work place name)",
+  "to": ['me'],
+  "sentAt": 1651249930594,
+  "isStar": false,
+  "isRead": false,
+  "from": 'random work place name',
+},{
+  "id": "0deac94aaaa",
+  "subject": "Im here from the begin of time",
+  "body": "this thing is history",
+  "to": ['me'],
+  "sentAt": 1,
+  "isStar": true,
+  "isRead": false,
+  "from": 'Time Lord',
+},{
+  "id": "0decsdfaaa",
+  "subject": "please dont distroy our world",
+  "body": "I know you can do it but please dont",
+  "to": ['Thanos'],
+  "sentAt": 1551349130094,
+  "isStar": true,
+  "isRead": false,
+  "from": 'me',
 }];
 
 export const mailService = {

@@ -1,5 +1,7 @@
 import toDo from './todo-display.cmp.js'
 import textBox from './textbox-display.cmp.js'
+import imageNote from './img-note-display.cmp.js'
+import videoNote from './video-note-display.cmp.js'
 
 export default {
     props: ['notes'],
@@ -26,5 +28,7 @@ export default {
     components:{
         toDo,
         textBox,
+        imageNote,
+        videoNote
     }
 }

@@ -1,7 +1,8 @@
 import {keepService} from '../service/keep.service.js'
 import textBox from './note-types/text-box.cmp.js'
 import toDo from './note-types/to-do.cmp.js'
-import imageNote from './note-types/photo-note.cmp.js'
+import imageNote from './note-types/img-note.cmp.js'
+import videoNote from './note-types/video-note.cmp.js'
 
 export default {
     props: ['noteType'],
@@ -31,5 +32,6 @@ export default {
         textBox,
         toDo,
         imageNote,
+        videoNote
     }
 }

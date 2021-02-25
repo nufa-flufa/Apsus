@@ -8,7 +8,7 @@ export const keepService = {
     saveNote,
     getById,
     updateNote,
-    loadImageFromInput,
+    uploadUrlFile,
 }
 
 const NOTES_KEY = 'notes'
@@ -25,6 +25,10 @@ function getNotes(){
 }
 
 function saveNote(note){
+    // if(note.type === 'image-note') {
+    //     uploadUrlFile(note.info.imgUrl)
+    //      .then(file=> console.log('img url', file))
+    // }
    return storageService.post(NOTES_KEY, note)
 }
 
@@ -52,24 +56,10 @@ function deleteNote(noteId){
 
 }
 
-function loadImageFromInput(ev, onImageReady) {
-    console.log('hi')
-    var reader = new FileReader()
-    reader.onload = function (event) {
-        console.log('hello')
-        var img = new Image()
-        img.onload = onImageReady.bind(null, img)
-        img.src = event.target.result
-        var newImage = {
-            // id: 
-            url: img.src,
-            // keywords:['personal']
-        }
-        console.log(newImage)
-    }
-    reader.readAsDataURL(ev.target.files[0])
-}
+function uploadUrlFile(url){
+    // return axios.get(url)
 
+}
 
 
 var gNotes = [
@@ -124,7 +114,7 @@ var survey =
         },
 
         {
-            type: 'linearScale',
+            type: 'videoNote',
             info: {
                 label: 'Quality:',
                 max: 5

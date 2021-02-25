@@ -1,15 +1,16 @@
 export default{
     props:['note'],
     template:`
-        <section class="textbox note">
+        <section class="video note">
             <header>
-                <button class="btn" @click="deleteTextbox">X</button>
+                <button class="btn" @click="deleteVidNote">X</button>
                 <h3>{{note.info.title}}</h3>
             </header>
             <div class="note-content">
-                <p>{{note.info.txt}}</p>
-                <button  @click="editTextbox" >Edit</button>
-            </div>        
+                <iframe :src="note.info.vidUrl" ></iframe>
+                <button  @click="editVid" >Edit</button>
+            </div>
+           
         </section>
     `,
     data(){
@@ -19,10 +20,10 @@ export default{
     },
 
     methods:{
-        deleteTextbox(){
+        deleteVidNote(){
             this.$emit('deleteNote', this.note)
         },
-        editTextbox(){
+        editVid(){
             this.$emit('editNote', this.note)
        },
     //    editNoteColor(){

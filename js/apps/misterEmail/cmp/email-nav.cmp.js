@@ -1,11 +1,11 @@
 export default {
     template: `
-    <section>
+    <section class="nav-bar">
         <div class="add-mail nav-btn" @click="openMail()"><span class="plus">+</span> Compose</div>
         <div class="nav-btn" @click="filter('inbox')">inbox</div>
         <div class="nav-btn" @click="filter('starred')">Starred</div>
         <div class="nav-btn" @click="filter('sent')">Sent Mail</div>
-        <div class="nav-btn" @click="filter('draft')">Draft</div>
+        <div class="nav-btn" @click="filter('All')">All</div>
     </section>
     `,
     data() {

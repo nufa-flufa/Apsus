@@ -14,7 +14,6 @@
 
 .app-header {
     grid-row: 1/2;
-    /* height:100px; */
     background-color: #E6F4F1;
     color:#00303F;
     box-shadow: 4px -2px 15px #00303f87;
@@ -45,8 +44,11 @@ nav{
 
 /* FOOTER */
 footer {
-    grid-row: 3/4;
-    height: 30px;
+    /* grid-row: 3/4; */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
     background-color: #E6F4F1;
     color:#00303F;
     box-shadow: 1px 4px 13px #00303F;

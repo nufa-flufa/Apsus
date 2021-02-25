@@ -10,7 +10,8 @@ export default {
     template: `
         <section class="mail-container">
             <email-nav @filter="setFilter" @openMail="toggleMail"/><!-- NAV -->
-            <email-list :mails="mailsToShow" @remove="removeMail"/><!-- email list -->
+            <email-list :mails="mailsToShow" @remove="removeMail" @stared="stared"/><!-- email list --> 
+            <!--<router-view :mails="mailsToShow" @remove="removeMail" @stared="stared"/>-->
             <email-send v-if="sending" @send="sendMail" />
         </section>
     `,
@@ -30,7 +31,7 @@ export default {
                 .then(mails => {
                     const folder = this.filterBy.folder;
                     mails = mails.filter(mail => {
-                        if(folder === 'index') return (mail.from !== 'me')
+                        if(folder === 'inbox') return (mail.from !== 'me')
                         else if(folder === 'starred') return (mail.isStar)
                         else if(folder === 'sent') return (mail.from === 'me')
                         else return true;
@@ -53,6 +54,10 @@ export default {
         },
         toggleMail() {
             this.sending = !this.sending;
+        },
+        stared(mail){
+            mail.isStar = !mail.isStar;
+            mailService.put(mail);
         },
     },
     computed: {

@@ -9,6 +9,8 @@ export default {
             <button class="btn" @click="getType('textBox')"> Click for Note</button>
             <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
             <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
+            <button  class="btn" @click="getType('videoNote')"> Click for Video</button>
+            
         </div>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote"/>
         <notes-display  v-if="notes" :notes="notes" @delete="deleteNote" @edit="editNote"/>
@@ -29,7 +31,7 @@ export default {
         },
         getType(val) {
             const type = keepService.getByType(val)
-            // console.log('type:', type)
+            console.log('type:', type)
             this.noteType = type
         },
 
