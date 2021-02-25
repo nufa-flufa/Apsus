@@ -4,11 +4,10 @@ export default {
     template: `
           <section>
               <label>
-                  {{info.label}}
                 </label>  
                 <input type="text" placeholder="give a title to your note" v-model="note.info.title" /> 
-                <textarea  placeholder=""  rows="10"
-                  cols="50" v-model="val" @change="reportVal" :list="listId" required >
+                <textarea  placeholder=""  rows="15"
+                  cols="30" v-model="val" :list="listId" required >
               </textarea>
               <button @click="reportVal">Done</button>
 
@@ -18,7 +17,7 @@ export default {
         return {
             val: '',
             note: {
-                type: 'text-box',
+                type: 'textBox',
                 isPinned: false,
                 info: {
                     title:'',

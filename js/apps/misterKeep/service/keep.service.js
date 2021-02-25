@@ -6,6 +6,9 @@ export const keepService = {
     makeId,
     deleteNote,
     saveNote,
+    getById,
+    updateNote,
+    loadImageFromInput,
 }
 
 const NOTES_KEY = 'notes'
@@ -25,10 +28,17 @@ function saveNote(note){
    return storageService.post(NOTES_KEY, note)
 }
 
-function getByType(type){
-    return survey.cmps.find(cmp => cmp.type === type)
+function updateNote(editNote){
+    return storageService.put(NOTES_KEY, editNote)
 }
 
+function getByType(type){
+    console.log('loca service getByType:', type)
+    return survey.cmps.find(cmp => cmp.type === type)
+}
+function getById(noteId){
+    return storageService.get( NOTES_KEY,noteId)
+}
 function makeId(length = 5) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -42,15 +52,37 @@ function deleteNote(noteId){
 
 }
 
+function loadImageFromInput(ev, onImageReady) {
+    console.log('hi')
+    var reader = new FileReader()
+    reader.onload = function (event) {
+        console.log('hello')
+        var img = new Image()
+        img.onload = onImageReady.bind(null, img)
+        img.src = event.target.result
+        var newImage = {
+            // id: 
+            url: img.src,
+            // keywords:['personal']
+        }
+        console.log(newImage)
+    }
+    reader.readAsDataURL(ev.target.files[0])
+}
+
+
+
 var gNotes = [
     {
-        type: "textbox",
+        id:'j101',
+        type: "textBox",
         isPinned: true,
         info: {
             txt: "Fullstack Me Baby!"
         }
     },
     // {
+        // id:'j102',
     //     type: "NoteImg",
     //     info: {
     //         url: "http://some-img/me",
@@ -61,6 +93,7 @@ var gNotes = [
     //     }
     // },
     {
+        id:'j103',
         type: "to-do",
         info: {
             // label: "How was it:",
@@ -98,7 +131,7 @@ var survey =
             }
         },
         {
-            type: 'photoTuner',
+            type: 'imageNote',
             info: {
                 label: 'Tune your photo:',
                 // imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1557175588/Robots/Crypto-robots.jpg'

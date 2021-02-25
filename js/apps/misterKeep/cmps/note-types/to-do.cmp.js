@@ -7,7 +7,7 @@ export default {
               </label>
                 <form @submit.prevent="saveTodo(val)">  
                     <input type=text placeholder='Write your To Do here' v-model="val" />
-                    <button>save</button>
+                    <button>Add to list</button>
                 </form>
             <ul class="todo-note">
                 <li v-if="note.info.todos" v-for="todo in note.info.todos">
@@ -27,7 +27,6 @@ export default {
     methods: {
         reportVal() {
             this.$emit("setVal", this.note);
-            // console.log('val',this.val)
         },
         saveTodo(val) {
             if (!val) return

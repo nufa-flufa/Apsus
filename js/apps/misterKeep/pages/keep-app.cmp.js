@@ -8,10 +8,10 @@ export default {
         <div class="add-zone">
             <button class="btn" @click="getType('textBox')"> Click for Note</button>
             <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
-            <button  class="btn" @click="getType('textBox')"> Click for Img</button>
+            <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
         </div>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote"/>
-        <notes-display  v-if="notes" :notes="notes" @delete="deleteNote"/>
+        <notes-display  v-if="notes" :notes="notes" @delete="deleteNote" @edit="editNote"/>
     </section>
     `,
     data() {
@@ -19,29 +19,44 @@ export default {
             notes: '',
             noteType: null,
             userNotes: [],
+            noteEdit: null,
         }
     },
     methods: {
         loadNotes() {
             keepService.getNotes()
                 .then(notes => this.notes = notes)
-            console.log(this.notes)
         },
         getType(val) {
             const type = keepService.getByType(val)
-            console.log('type:',type)
+            // console.log('type:', type)
             this.noteType = type
         },
 
         keepNote(note) {
-            keepService.saveNote(note)
-                .then(note => this.loadNotes())
-
+            if (this.noteEdit) {
+                keepService.updateNote(note)
+                    .then(note => this.loadNotes())
+            } else {
+                keepService.saveNote(note)
+                    .then(note => this.loadNotes())
+            }
             this.noteType = null;
         },
         deleteNote(noteId) {
             keepService.deleteNote(noteId)
-                .then(()=>this.loadNotes())
+                .then(() => this.loadNotes())
+        },
+        editNote(noteId) {
+            keepService.getById(noteId)
+                .then(note => {
+                    // console.log('got it with async', note)
+                    // console.log('got it with async', note)
+                   this.getType(note.type)
+                    // console.log('got type it with async',this.noteType)
+                    this.noteEdit = noteId
+                    // console.log('got id it with async',this.noteEdit)
+                })
         }
     },
     created() {

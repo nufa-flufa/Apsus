@@ -4,11 +4,16 @@
     min-height: 200px;
     background-color: rgb(193, 229, 231);
     box-shadow: 0px 4px 9px 0px #00303f6e;
-    margin: 10px;
     text-align: start;
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    overflow: auto;
+    line-height: 2rem;
+}
+
+.todo li{
+    list-style: none;
 }
 
 .note button{

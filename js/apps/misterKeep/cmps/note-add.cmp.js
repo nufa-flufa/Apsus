@@ -1,12 +1,12 @@
 import {keepService} from '../service/keep.service.js'
 import textBox from './note-types/text-box.cmp.js'
 import toDo from './note-types/to-do.cmp.js'
+import imageNote from './note-types/photo-note.cmp.js'
 
 export default {
     props: ['noteType'],
     template: `
     <section class="add-note">
-        <h2>Note</h2>
         <form @submit.prevent="save">
             <component :is="noteType.type" :info="noteType.info" @setVal="saveNote"></component>
         </form>
@@ -30,5 +30,6 @@ export default {
     components: {
         textBox,
         toDo,
+        imageNote,
     }
 }

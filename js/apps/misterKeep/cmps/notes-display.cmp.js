@@ -6,7 +6,7 @@ export default {
     template: `
     <section class="notes-display">
         <template v-for="note in notes">
-           <component :is="note.type" :note="note" @deleteNote="deleteNote"></component>
+           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote"></component>
            </template>
     </section>
     `,
@@ -14,6 +14,10 @@ export default {
         deleteNote(note){
             this.$emit('delete', note.id)
         },
+        editNote(note){
+            console.log(note)
+            this.$emit('edit', note.id)
+        }
 
     },
     created() {
