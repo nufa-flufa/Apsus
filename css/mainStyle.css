@@ -3,20 +3,11 @@
 @import './apps/keep/cmp/note.css';
 @import './apps/keep/cmp/notes-display.css';
 @import './apps/keep/pages/main-page.css';
-<<<<<<< HEAD
 @import './css/apps/email/pages/email-app.css';
-@import './css/apps/email/cmp/emailNav.css';
-=======
 @import './apps/keep/cmp/add-note-nav.css';
->>>>>>> 5d3222fc18c11970aa44de9650bc1e51a61e770c
 
 
 /* FOOTER */
 
 
 /* NOTES-DISPLAY */
-
-
-
-/* Mails */
-

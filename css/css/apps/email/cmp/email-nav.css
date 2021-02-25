@@ -1,0 +1,12 @@
+.nav-btn:hover{
+    background-color: rgb(110, 110, 236);
+    opacity: 1;
+}
+
+.nav-btn {
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 150px;
+    background-color: lightcyan;
+}
