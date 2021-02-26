@@ -3,12 +3,15 @@ export default{
     template:`
         <section class="image note">
             <header>
-                <button class="btn" @click="deleteImgNote">X</button>
+                <button class="btn delete" @click="deleteImgNote"><i class="far fa-trash-alt"></i></button>
+                <button class="btn edit"  @click="editImg" ><i class="fas fa-pencil-alt"></i></button>
+                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
+
                 <h3>{{note.info.title}}</h3>
             </header>
             <div class="note-content">
                 <img :src="note.info.imgUrl" />
-                <button  @click="editImg" >Edit</button>
+              
             </div>
         </section>
     `,
@@ -25,6 +28,10 @@ export default{
         editImg(){
             this.$emit('editNote', this.note)
        },
+       pinTextbox(){
+        this.note.isPinned = !this.note.isPinned
+        console.log(this.note.isPinned)
+    }
     //    editNoteColor(){
     //        console.log(this.color)
     //    }

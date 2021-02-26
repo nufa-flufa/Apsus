@@ -7,7 +7,8 @@ import videoNote from './note-types/video-note.cmp.js'
 export default {
     props: ['noteType'],
     template: `
-    <section class="add-note">
+    <section>
+    <button @click="closeAddModal" class="close">X</button>
         <form @submit.prevent="save">
             <component :is="noteType.type" :info="noteType.info" @setVal="saveNote"></component>
         </form>
@@ -26,7 +27,11 @@ export default {
         saveNote(note) {
             note.id = keepService.makeId()
             this.$emit('keep-note', note)
+        },
+        closeAddModal(){
+            this.$emit('close-modal')
         }
+
     },
     components: {
         textBox,

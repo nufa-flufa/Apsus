@@ -11,6 +11,7 @@
     overflow: auto;
     line-height: 2rem;
     margin:10px;
+    border-radius: 5px;
 }
 
 .note header{
@@ -33,6 +34,22 @@
 .note button{
     float: right;
     margin: 10px;
+    /* background-color: ; */
+}
+.note button:hover{
+    background-color: rgb(82, 82, 82);
+    color: rgb(236, 230, 230);
+}
+
+
+.fas .fa-pencil-alt{
+    background: f303;
+}
+.far .fa-trash-alt{
+    background:f2ed ;
+}
+.fas .fa-thumbtack{
+    background: f08d;
 }
 
 

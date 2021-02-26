@@ -12,7 +12,7 @@ export default {
             <button  class="btn" @click="getType('videoNote')"> Click for Video</button>
             
         </div>
-        <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote"/>
+        <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote" @close-modal="closeAddModal"/>
         <notes-display  v-if="notes" :notes="notes" @delete="deleteNote" @edit="editNote"/>
     </section>
     `,
@@ -59,10 +59,17 @@ export default {
                     this.noteEdit = noteId
                     // console.log('got id it with async',this.noteEdit)
                 })
+        },
+        closeAddModal(){
+            this.noteType = null
         }
     },
     created() {
         this.loadNotes()
+
+    },
+    computed:{
+      
     },
     components: {
         noteAdd,

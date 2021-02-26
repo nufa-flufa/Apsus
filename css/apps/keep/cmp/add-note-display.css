@@ -1,0 +1,47 @@
+.add-note{
+    min-height: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;  
+    margin: auto;
+}
+
+.close{
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 5px ;
+}
+
+.add-note.todo{
+    background-color: aqua;
+    display: flex;
+    flex-direction:column  ;
+   
+    align-items: center; 
+}
+
+.add-note input{
+    height: 50px;
+    width: 300px;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.3rem ;
+    font-family: noto-sans-medium;
+    margin: 0 10px 10px 10px;
+    padding: 3px;
+
+}
+.add-note textarea{
+    width: 30%;
+}
+
+.add-note button{
+    height: 50px;
+    width: 100px;
+    background-color: lightgreen;
+}
+

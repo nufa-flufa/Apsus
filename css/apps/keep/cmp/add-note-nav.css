@@ -1,5 +1,4 @@
 .add-zone{
-   
     box-shadow: -2px 5px 4px rgba(67, 99, 158, 0.555);
     width: 100%;
     display: flex;
@@ -19,9 +18,3 @@
     background-color: rgb(105, 191, 224);
 }
 
-.add-note{
-    /* border: 2px solid green; */
-    padding-left: 30px;
-    overflow-y: scroll;
-
-}
