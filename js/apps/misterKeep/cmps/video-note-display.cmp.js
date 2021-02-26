@@ -3,12 +3,15 @@ export default{
     template:`
         <section class="video note">
             <header>
-                <button class="btn" @click="deleteVidNote">X</button>
+                <button class="btn delete" @click="deleteVidNote"><i class="far fa-trash-alt"></i></button>
+                <button class="btn edit" @click="editVid" > <i class="fas fa-pencil-alt"></i></button>
+                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
+
                 <h3>{{note.info.title}}</h3>
             </header>
             <div class="note-content">
                 <iframe :src="note.info.vidUrl" ></iframe>
-                <button  @click="editVid" >Edit</button>
+               
             </div>
            
         </section>
@@ -26,6 +29,9 @@ export default{
         editVid(){
             this.$emit('editNote', this.note)
        },
+       pinTextbox(){
+        console.log('pinned')
+    }
     //    editNoteColor(){
     //        console.log(this.color)
     //    }

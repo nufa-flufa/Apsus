@@ -5,7 +5,9 @@ export default{
     template:`
         <section class="todo note">
             <header>
-                <button class="btn" @click="deleteTodo">X</button>
+                <button class="btn delete" @click="deleteTodo"><i class="far fa-trash-alt"></i></button>
+                <button class="btn edit" @click="editTodo" > <i class="fas fa-pencil-alt"></i></button>
+                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
             </header>
             <div class="note-content">
             <ul>
@@ -14,7 +16,7 @@ export default{
                 <label for="todo" >{{todo.txt}} {{dateFormat}}</label>    
                 </li>
             </ul>
-            <button  @click="editTodo" >Edit</button>
+            
             </div>
         </section>
     `,
@@ -24,7 +26,10 @@ export default{
         },
        editTodo(){
             this.$emit('editNote', this.note)
-       }
+       },
+       pinTextbox(){
+        console.log('pinned')
+    }
     },
     computed:{
         dateFormat(){

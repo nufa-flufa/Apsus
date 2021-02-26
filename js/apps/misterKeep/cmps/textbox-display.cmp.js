@@ -3,12 +3,15 @@ export default{
     template:`
         <section class="textbox note">
             <header>
-                <button class="btn" @click="deleteTextbox">X</button>
+                <button class="btn delete" @click="deleteTextbox"><i class="far fa-trash-alt"></i></button>
+                <button class="btn edit " @click="editTextbox" > <i class="fas fa-pencil-alt"></i></button>
+                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
+                
                 <h3>{{note.info.title}}</h3>
             </header>
             <div class="note-content">
                 <p>{{note.info.txt}}</p>
-                <button  @click="editTextbox" >Edit</button>
+            
             </div>        
         </section>
     `,
@@ -20,15 +23,18 @@ export default{
 
     methods:{
         deleteTextbox(){
+          
             this.$emit('deleteNote', this.note)
+            
         },
         editTextbox(){
             this.$emit('editNote', this.note)
        },
-    //    editNoteColor(){
-    //        console.log(this.color)
-    //    }
+       pinTextbox(){
+           console.log('pinned')
+       }
     },
+  
    
     created(){
     }

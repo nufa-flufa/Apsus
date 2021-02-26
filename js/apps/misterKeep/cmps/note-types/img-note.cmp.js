@@ -4,14 +4,13 @@ import { keepService } from '../../service/keep.service.js'
 export default {
     props: ['info'],
     template: `
-          <section>
+          <section class="add-note">
               <form @submit.prevent="reportVal">
                 <input type="text" placeholder="give a title to your note" v-model="note.info.title" /> 
-                <input type="text" placeholder="img url" name="image"   v-model="val" required />
-                <button class="btn upload-btn" >Upload</button>
+                <input type="text" placeholder="img url" name="image"   v-model="note.info.imgUrl" required />
+                <button class="btn upload-btn" >Save</button>
             </form>
             <img v-if="val" :src="val" class="img-display" />
-            <!-- <iframe v-if="val" :src="foo" ></iframe> -->
 
           </section>
           `,
@@ -21,6 +20,7 @@ export default {
             img: '',
             note: {
                 type: 'image-note',
+                isPinned: false,
                 info: {
                     title: '',
                     imgUrl: '',
@@ -30,17 +30,10 @@ export default {
     },
     methods: {
         reportVal() {
-            var foo = this.val.replace('watch?v=','embed/')
-            console.log('youtube',foo)
-            this.note.info.imgUrl = foo
+            // this.note.info.imgUrl = val
             this.$emit("setVal", this.note);
           
         },
-        foo(){
-            var foo = this.val.replace('watch','embed')
-            console.log(foo)
-            // return this.val
-        }
 
     },
     computed: {

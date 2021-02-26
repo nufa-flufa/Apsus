@@ -1,13 +1,13 @@
 export default {
     props: ['info'],
     template: `
-          <section>
+          <section  class="add-note">
               <label>
                   {{info.label}}
               </label>
                 <form @submit.prevent="saveTodo(val)">  
                     <input type=text placeholder='Write your To Do here' v-model="val" />
-                    <button>Add to list</button>
+                    <button class="btn">Add to list</button>
                 </form>
             <ul class="todo-note">
                 <li v-if="note.info.todos" v-for="todo in note.info.todos">
@@ -15,13 +15,15 @@ export default {
                     <p>{{todo.doneAt}}</p>
                 </li>
             </ul>
-            <button @click="reportVal">Done</button>
+            <button class="btn done" @click="reportVal">Done</button>
           </section>
           `,
     data() {
         return {
             val: '',
-            note: { type: 'to-do',
+            note: {
+            type: 'to-do',
+            isPinned: false,
              info: {todos:[]}
             }
         };

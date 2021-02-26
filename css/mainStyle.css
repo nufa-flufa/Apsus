@@ -6,6 +6,7 @@
 @import './css/apps/email/pages/email-app.css';
 @import './css/apps/email/cmp/emailNav.css';
 @import './apps/keep/cmp/add-note-nav.css';
+@import './apps/keep/cmp/add-note-display.css';
 
 
 /* FOOTER */
