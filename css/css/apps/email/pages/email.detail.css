@@ -1,0 +1,14 @@
+.mail-detail-container{
+    display: flex;
+    flex-direction: column;
+    width: 1060px;
+}
+
+.from-to-container{
+    display: flex;
+}
+
+.mail-body{
+    text-align: center;
+    color:red;
+}

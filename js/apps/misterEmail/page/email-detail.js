@@ -8,12 +8,11 @@ import {
 
 export default {
     template: `
-    <section v-if="mail">
+    <section v-if="mail" class="mail-detail-container">
         <h2>{{mail.subject}}</h2>
         <div class="mail-details">
             <div class="from-to-container">
-                <h4>{{mail.from}}</h4>
-                <h4>{{getTo}}</h4>
+                <h4>from: {{mail.from}} → {{getTo}}</h4>
             </div>
             <p>{{getDate}}</p>
         </div>

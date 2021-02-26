@@ -4,7 +4,7 @@
 @import './apps/keep/cmp/notes-display.css';
 @import './apps/keep/pages/main-page.css';
 @import './css/apps/email/pages/email-app.css';
-@import './css/apps/email/cmp/emailNav.css';
+@import './css/apps/email/pages/email.detail.css';
 @import './apps/keep/cmp/add-note-nav.css';
 
 
