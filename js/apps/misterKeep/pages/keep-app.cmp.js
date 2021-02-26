@@ -31,12 +31,15 @@ export default {
         },
         getType(val) {
             const type = keepService.getByType(val)
-            console.log('type:', type)
+            // console.log('type:', type)
             this.noteType = type
         },
 
         keepNote(note) {
+            console.log(note)
             if (this.noteEdit) {
+                    console.log('keepNote check',note.id)
+                    note.id = this.noteEdit
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
             } else {
@@ -44,16 +47,18 @@ export default {
                     .then(note => this.loadNotes())
             }
             this.noteType = null;
+            this.noteEdit = null;
         },
         deleteNote(noteId) {
             keepService.deleteNote(noteId)
                 .then(() => this.loadNotes())
         },
         editNote(noteId) {
+            // console.log('note id start:', noteId)
             keepService.getById(noteId)
-                .then(note => {
-                    // console.log('got it with async', note)
-                    // console.log('got it with async', note)
+            .then(note => {
+                    // console.log('note id after reqeust:', note)
+
                    this.getType(note.type)
                     // console.log('got type it with async',this.noteType)
                     this.noteEdit = noteId

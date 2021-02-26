@@ -8,7 +8,6 @@ export const keepService = {
     saveNote,
     getById,
     updateNote,
-    uploadUrlFile,
 }
 
 const NOTES_KEY = 'notes'
@@ -25,10 +24,6 @@ function getNotes(){
 }
 
 function saveNote(note){
-    // if(note.type === 'image-note') {
-    //     uploadUrlFile(note.info.imgUrl)
-    //      .then(file=> console.log('img url', file))
-    // }
    return storageService.post(NOTES_KEY, note)
 }
 
@@ -53,11 +48,6 @@ function makeId(length = 5) {
 }
 function deleteNote(noteId){
         return storageService.remove(NOTES_KEY, noteId)
-
-}
-
-function uploadUrlFile(url){
-    // return axios.get(url)
 
 }
 
