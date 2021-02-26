@@ -37,6 +37,7 @@ export default {
 
         keepNote(note) {
             if (this.noteEdit) {
+                console.log({note});
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
             } else {
@@ -50,11 +51,12 @@ export default {
                 .then(() => this.loadNotes())
         },
         editNote(noteId) {
+            console.log(noteId);
             keepService.getById(noteId)
                 .then(note => {
                     // console.log('got it with async', note)
                     // console.log('got it with async', note)
-                   this.getType(note.type)
+                    this.getType(note.type)
                     // console.log('got type it with async',this.noteType)
                     this.noteEdit = noteId
                     // console.log('got id it with async',this.noteEdit)
