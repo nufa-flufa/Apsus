@@ -21,9 +21,13 @@ export default {
         </div>
         <div v-if="isReply" class="reply-msg">
             <textarea v-model="mail.body" class="mail-body"></textarea>
-            <button @click="send">Send</button>
+            <div>
+                <button @click="send">Send reply</button>
+                <button @click="moveToNotes">Move to notes</button>
+                <button @click="deleteMail">Delete mail</button>
+            </div>
         </div>
-        <button @click="reply">{{replyText}}</button>
+        <button @click="reply">More Options</button>
     </section>
 `,
     data() {
@@ -34,6 +38,14 @@ export default {
         }
     },
     methods: {
+        moveToNotes() {
+            eventBus.$emit('mailToNote', this.mail);
+            this.$router.push('/keep');
+        },
+        deleteMail() {
+            mailService.remove(this.mail.id);
+            this.$router.push('/mail');
+        },
         loadMail() {
             const id = this.$route.params.mailId
             mailService.getById(id)
@@ -68,13 +80,12 @@ export default {
                 }
                 eventBus.$emit('show-msg', msg)
             }).catch(err => {
-            console.log(err);
-            const msg = {
-                txt: 'Error, please try again later',
-                type: 'error'
-            }
-            eventBus.$emit('show-msg', msg)
-        })
+                const msg = {
+                    txt: 'Error, please try again later',
+                    type: 'error'
+                }
+                eventBus.$emit('show-msg', msg)
+            })
         },
     },
     computed: {
