@@ -32,18 +32,30 @@
     .main{
         width:600px;
     }
+    .add-note-zone .btn{
+        font-size:16px;
+    }
 
 }
 @media (max-width:620px){
     .main{
-        width:400px;
+        width:500px;
     }
-    .add-note-zone{
-        /* background: yellow; */
+}
+@media (max-width:530px){
+    .main{
+       width: 350px;
     }
-    .add-note-zone .button::before{
-        content:'' ;
+    .add-note-zone .btn{
+        font-size:16px;
     }
-
-
+    nav a{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+}
+@media (max-width:370px){
+    .main{
+        width: 300px;
+    }
 }

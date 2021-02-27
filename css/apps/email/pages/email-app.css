@@ -12,27 +12,43 @@
     justify-content: space-between;
 }
 
-.search-bar{
+.search-bar {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.search-bar button{
+    width: 150px;
+    height: 40px;
+    border-radius: 0px;
+    border-radius: 20px;
+    background-color: unset;
+}
+.search-bar button:hover{
+    background-color:rgba(160, 191, 195, 0.37) ;
 }
 
+
 .search-bar input{
-    height: 30px;
+    height: 40px;;
     width: 300px;
     border-radius: 2rem;
     text-align: center;
     font-family: noto-sans-medium;
-    margin: 0 10px 10px 10px;
+    margin-right: 10px;
+    margin-left: 5px;
     padding: 3px;
 }
 
 .search-bar select{
-    height: 30px;
+    height: 40px;
     width: 300px;
     border-radius: 2rem;
     text-align: center;
     font-family: noto-sans-medium;
-    margin: 0 10px 10px 10px;
+    margin-right: 10px;
+    margin-left: 5px;
     padding: 3px;
 }
 
@@ -41,7 +57,8 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
+    cursor: pointer;
 }
 
 .world {
@@ -120,7 +137,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    background-color: grey;
+    background-color:  #f0f1f1;
     border: 0.5px solid black;
 }
 
@@ -128,12 +145,16 @@
     text-align: center;
     width: 1%;
     height: 30px;
-    background-color: rgb(105, 191, 224);
+    background-color: #00303F;
+    color: #E6F4F1;
 }
 
 .progress-btn {
     margin-right: auto;
     margin-left: auto;
+}
+.progress-btn:hover{
+    background-color: rgba(160, 191, 195, 0.37);
 }
 
 .btn-mail {
