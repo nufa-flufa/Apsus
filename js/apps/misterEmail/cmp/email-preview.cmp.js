@@ -3,7 +3,7 @@ export default {
     template: `
     <section class="email-preview">
             <p class="star" :class="{stared: !isStar}" @click.stop="stared">{{isStarText}}</p>
-            <p class="from">{{mail.from}}</p>
+            <p class="from">{{mail.from}}→{{mail.to}}</p>
             <p class="mail-preview-subject">subject: {{subjectDeco}}</p>
             <p class="date">{{getDate}}</p>
     </section>

@@ -2,10 +2,10 @@ import { eventBus } from '../service/event-bus.service.js'
 
 export default {
     template: `
-        <section v-if="msg" class="user-msg" :class="msg.type">
+        <!--<section v-if="msg" class="user-msg" :class="msg.type">
             <button @click="msg=null">x</button>
             <p>{{msg.txt}}</p>
-        </section>
+        </section>-->
     `,
     data() {
         return {
@@ -14,12 +14,12 @@ export default {
     },
     methods: {
         setMsg(msg) {
-            this.msg = msg
-            // swal(this.msg.txt)
-            this.msg = msg
+            this.msg = msg;
+            swal(this.msg.txt);
+            /*this.msg = msg
             setTimeout(() => {
                 this.msg = null
-            }, 3000);
+            }, 3000);*/
         }
     },
     created() {

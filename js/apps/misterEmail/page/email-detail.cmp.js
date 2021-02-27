@@ -40,10 +40,20 @@ export default {
     methods: {
         moveToNotes() {
             eventBus.$emit('mailToNote', this.mail);
+            const msg = {
+                txt: 'Mail moved to notes',
+                type: 'success'
+            }
+            eventBus.$emit('show-msg', msg);
             this.$router.push('/keep');
         },
         deleteMail() {
             mailService.remove(this.mail.id);
+            const msg = {
+                txt: 'Mail removed',
+                type: 'success'
+            }
+            eventBus.$emit('show-msg', msg);
             this.$router.push('/mail');
         },
         loadMail() {
