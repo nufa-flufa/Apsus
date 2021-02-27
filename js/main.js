@@ -16,7 +16,7 @@ const options = {
         <user-msg/>
         <app-header />
         <router-view  class="main-screen"/>
-        <footer>footer</footer>
+        <footer class="footer">I'm just a footer don't mind me</footer>
     </section>
     `,
 

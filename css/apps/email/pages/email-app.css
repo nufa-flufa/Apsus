@@ -1,6 +1,10 @@
 @import '/css/apps/email/cmp/email-send.css';
 @import '/css/css/apps/email/cmp/email-nav.css';
 
+* {
+    font-family: noto-sans-medium;
+}
+
 .mail-container {
     display: flex;
     width: 1200px;
@@ -21,11 +25,13 @@
     border-radius: 15px;
     display: flex;
     margin-bottom: 5px;
-    background-color: rgba(28, 25, 158, 0.055);
+    background-color: rgb(193, 229, 231);
+    font-size: 0.8em;
+    height: 4em;
 }
 
 .mail-preview-container:hover {
-    background-color: rgba(69, 67, 80, 0.5);
+    background-color: rgba(70, 57, 136, 0.233);
 }
 
 .email-preview {
@@ -36,17 +42,19 @@
 
 
 .read {
-    background-color: rgba(46, 54, 77, 0.3);
+    background-color: rgb(142, 191, 194);
     font-weight: bold;
 }
 
 .add-mail-modal {
     background-color: #E6F4F1;
     position: absolute;
-    bottom: 0px;
-    right: 5%;
+    bottom: 50px;
+    right: 2%;
     width: 800px;
-    height: 40%
+    height: 40%;
+    z-index: 10;
+    border: 1px solid black;
 }
 
 .from {
@@ -67,7 +75,7 @@
     font-size: 1.3em;
     margin-bottom: 0px;
     margin-top: 0px;
-    margin-left:5px;
+    margin-left: 5px;
     align-items: center;
     display: flex;
     cursor: pointer;
@@ -80,4 +88,35 @@
 
 .pointer {
     cursor: pointer;
+}
+
+.mail-app {
+    font-family: noto-sans-medium;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    margin-bottom: 30px;
+}
+
+.my-progress {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: grey;
+    border: 0.5px solid black;
+}
+
+.my-bar {
+    text-align: center;
+    width: 1%;
+    height: 30px;
+    background-color: rgb(105, 191, 224);
+}
+
+.progress-btn {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn-mail {
+    text-align: center;
 }

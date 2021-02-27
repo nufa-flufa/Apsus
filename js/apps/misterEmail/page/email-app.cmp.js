@@ -10,11 +10,11 @@ import {
 
 export default {
     template: `
-        <section class="mail-container">
-            <email-nav @filter="setFilter" @openMail="toggleMail"/><!-- NAV -->
+        <section class="main-screen mail-app"><!-- mail-container -->
             <email-list :mails="mailsToShow" @remove="removeMail" @stared="stared" @setSort="setSort"/><!-- email list --> 
-            <!--<router-view :mails="mailsToShow" @remove="removeMail" @stared="stared"/>-->
+            <email-nav v-if="statistic" :statistic="getStatistic"  @filter="setFilter" @openMail="toggleMail"/><!-- NAV -->
             <email-send v-if="sending" @send="sendMail" />
+            <!--<router-view :mails="mailsToShow" @remove="removeMail" @stared="stared"/>-->
         </section>
     `,
     data() {
@@ -26,12 +26,18 @@ export default {
                 sortBy: 'dateUp',
             },
             sending: false,
+            statistic: [],
         }
     },
     methods: {
         loadMails() {
             mailService.query()
                 .then(mails => {
+                    const unRead = mails.filter(mail => {
+                        return (mail.isRead);
+                    })
+                    this.statistic.push(mails.length);
+                    this.statistic.push(unRead.length);
                     const folder = this.filterBy.folder;
                     mails = mails.filter(mail => {
                         if (folder === 'inbox') return (mail.from !== 'me')
@@ -93,7 +99,6 @@ export default {
                 })
         },
         setFilter(filterBy) {
-            //console.log(filterBy);
             this.filterBy.folder = filterBy
             this.loadMails();
         },
@@ -111,13 +116,15 @@ export default {
         setSort(by) {
             this.filterBy.text = by.text;
             this.filterBy.sortBy = by.sortBy;
-            console.log(this.filterBy.sortBy);
             this.loadMails();
         },
     },
     computed: {
         mailsToShow() {
             return this.mails;
+        },
+        getStatistic() {
+            return this.statistic;
         }
     },
     created() {

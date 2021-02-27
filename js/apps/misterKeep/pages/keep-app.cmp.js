@@ -1,6 +1,7 @@
 import { keepService } from '../service/keep.service.js'
 import noteAdd from '../cmps/note-add.cmp.js'
 import notesDisplay from '../cmps/notes-display.cmp.js'
+import noteFilter from '../cmps/note-filter.cmp.js'
 
 export default {
     template: `
@@ -10,10 +11,10 @@ export default {
             <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
             <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
             <button  class="btn" @click="getType('videoNote')"> Click for Video</button>
-            
         </div>
+        <note-filter @filter="setFilter" />
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote" @close-modal="closeAddModal"/>
-        <notes-display  v-if="notes" :notes="notes" @delete="deleteNote" @edit="editNote"/>
+        <notes-display  v-if="notes" :notes="displayNotes" @delete="deleteNote" @edit="editNote"/>
     </section>
     `,
     data() {
@@ -22,6 +23,7 @@ export default {
             noteType: null,
             userNotes: [],
             noteEdit: null,
+            filterBy: 'all',
         }
     },
     methods: {
@@ -31,13 +33,15 @@ export default {
         },
         getType(val) {
             const type = keepService.getByType(val)
-            console.log('type:', type)
+            // console.log('type:', type)
             this.noteType = type
         },
 
         keepNote(note) {
+            console.log(note)
             if (this.noteEdit) {
-                console.log({note});
+                console.log('keepNote check', note.id)
+                note.id = this.noteEdit
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
             } else {
@@ -45,6 +49,7 @@ export default {
                     .then(note => this.loadNotes())
             }
             this.noteType = null;
+            this.noteEdit = null;
         },
         deleteNote(noteId) {
             keepService.deleteNote(noteId)
@@ -54,27 +59,36 @@ export default {
             console.log(noteId);
             keepService.getById(noteId)
                 .then(note => {
-                    // console.log('got it with async', note)
-                    // console.log('got it with async', note)
                     this.getType(note.type)
-                    // console.log('got type it with async',this.noteType)
                     this.noteEdit = noteId
-                    // console.log('got id it with async',this.noteEdit)
                 })
         },
-        closeAddModal(){
+        setFilter(filter){
+            this.filterBy = filter
+        },
+        closeAddModal() {
             this.noteType = null
-        }
+        },
+
+
+    },
+    computed: {
+        displayNotes(){
+            if(this.filterBy === 'all') return this.notes;
+            const notesToShow = this.notes.filter(note => note.type === this.filterBy)
+            console.log(notesToShow)
+            return notesToShow
+        },
+       
+
     },
     created() {
         this.loadNotes()
 
     },
-    computed:{
-      
-    },
     components: {
         noteAdd,
-        notesDisplay
+        notesDisplay,
+        noteFilter
     }
 }

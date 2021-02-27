@@ -5,11 +5,11 @@ export default {
     props: ['mails'],
     template: `
     <ul class="mail-list">
-        <mail-filter @setSort="setSort"/>
+        <mail-filter @setSort="setSort" class="search-bar"/>
         <li v-for="(mail, idx) in mails" :key="mail.id" class="mail-preview-container" :class="{read: !mail.isRead}" @click="sendToReply(mail.id)" >
                 <mail-preview :mail="mail" @stared="stared" />
                 <div class="mail-btn-container">
-                    <button @click.stop="remove(mail.id)" class="pointer">X</button>
+                    <button @click.stop="remove(mail.id)" class="btn pointer">X</button>
                 </div>
         </li>
     </ul>
@@ -31,8 +31,6 @@ export default {
             this.$emit('setSort', by);
         },
     },
-    computed: {},
-    created() {},
     components: {
         mailPreview,
         mailFilter,

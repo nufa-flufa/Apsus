@@ -1,0 +1,64 @@
+.wrapper {
+    width: 100%;
+    height: 89vh;
+    margin: 0 auto;
+    animation-name: animate;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.text-area {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.text-area h2 {
+    font-size: 75px;
+    color: white;
+}
+
+.text-area h3 {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    font-size: 35px;
+}
+
+.text-area p {
+    font-size: 18px;
+    color: #fff;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+.footer{
+    text-align: center;
+}
+
+@keyframes animate {
+    0% {
+        background: #29306a;
+    }
+
+    25% {
+        background: #0d00be;
+    }
+
+    50% {
+        background: #3b65b3;
+    }
+
+    75% {
+        background: #005762;
+    }
+
+    100% {
+        background: #4c9ab6;
+    }
+}
