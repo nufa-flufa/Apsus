@@ -37,7 +37,7 @@
     line-height: 1.9;
 }
 
-.footer{
+.footer {
     text-align: center;
 }
 
@@ -46,8 +46,12 @@
         background: #29306a;
     }
 
-    25% {
+    15% {
         background: #0d00be;
+    }
+
+    30% {
+        background: #4c9ab6;
     }
 
     50% {
@@ -59,6 +63,6 @@
     }
 
     100% {
-        background: #4c9ab6;
+        background: #29306a;
     }
 }
