@@ -11,10 +11,10 @@ export default {
             <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
             <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
             <button  class="btn" @click="getType('videoNote')"> Click for Video</button>
+            <note-filter @filter="setFilter" />
         </div>
-        <note-filter @filter="setFilter" />
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote" @close-modal="closeAddModal"/>
-        <notes-display  v-if="notes" :notes="displayNotes" @delete="deleteNote" @edit="editNote"/>
+        <notes-display  v-if="notes" :notes="displayNotes" @delete="deleteNote" @edit="editNote" @save-changes="savePinStatus"/>
     </section>
     `,
     data() {
@@ -33,17 +33,17 @@ export default {
         },
         getType(val) {
             const type = keepService.getByType(val)
-            // console.log('type:', type)
             this.noteType = type
         },
 
         keepNote(note) {
             console.log(note)
             if (this.noteEdit) {
-                console.log('keepNote check', note.id)
                 note.id = this.noteEdit
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
+                    swal('Your Note has been edited')
+
             } else {
                 keepService.saveNote(note)
                     .then(note => this.loadNotes())
@@ -62,8 +62,12 @@ export default {
                     this.noteEdit = noteId
                 })
         },
+        savePinStatus(note){
+            keepService.updateNote(note)
+        },
         setFilter(filter){
             this.filterBy = filter
+            console.log('changed', this.filterBy)
         },
         closeAddModal() {
             this.noteType = null
@@ -75,7 +79,7 @@ export default {
         displayNotes(){
             if(this.filterBy === 'all') return this.notes;
             const notesToShow = this.notes.filter(note => note.type === this.filterBy)
-            console.log(notesToShow)
+            console.log('display notes result',notesToShow)
             return notesToShow
         },
        

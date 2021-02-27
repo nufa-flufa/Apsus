@@ -1,11 +1,11 @@
-export default{
-    props:['note'],
-    template:`
+export default {
+    props: ['note'],
+    template: `
         <section class="image note">
             <header>
                 <button class="btn delete" @click="deleteImgNote"><i class="far fa-trash-alt"></i></button>
                 <button class="btn edit"  @click="editImg" ><i class="fas fa-pencil-alt"></i></button>
-                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
+                <button class="btn pin " @click="pinImgNote" > <i class="fas fa-thumbtack"></i></button>
 
                 <h3>{{note.info.title}}</h3>
             </header>
@@ -15,28 +15,24 @@ export default{
             </div>
         </section>
     `,
-    data(){
-        return{
-            color:null,
+    data() {
+        return {
+            color: null,
         }
     },
 
-    methods:{
-        deleteImgNote(){
+    methods: {
+        deleteImgNote() {
             this.$emit('deleteNote', this.note)
         },
-        editImg(){
+        editImg() {
             this.$emit('editNote', this.note)
-       },
-       pinTextbox(){
-        this.note.isPinned = !this.note.isPinned
-        console.log(this.note.isPinned)
-    }
-    //    editNoteColor(){
-    //        console.log(this.color)
-    //    }
+        },
+        pinImgNote() {
+            this.$emit('pin', this.note)
+        }
     },
-   
-    created(){
+
+    created() {
     }
 }

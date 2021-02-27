@@ -7,11 +7,20 @@ export default {
     props: ['notes'],
     template: `
     <section class="notes-display">
-        <template v-for="note in notes">
-           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote"></component>
-           </template>
+        <div v-if="notes" v-for="note in displayPinned" class="pinned">
+           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote"></component>
+        </div>
+        <br>
+        <div v-if="notes" v-for="note in displayUnPinned" class="not-pinned">
+           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote"></component>
+        </div>
     </section>
     `,
+    data() {
+        return {
+            // sortedNotes: {}
+        }
+    },
     methods: {
         deleteNote(note) {
             swal({
@@ -33,13 +42,44 @@ export default {
                 });
         },
         editNote(note) {
-            console.log(note)
+            // console.log(note)
             this.$emit('edit', note.id)
+        },
+        sortNote(note) {
+            let changedNote = this.notes.find(cahngedNote => cahngedNote.id === note.id)
+            console.log(changedNote)
+            changedNote.isPinned = !changedNote.isPinned
+            console.log( note.isPinned)
+            this.$emit('save-changes', note)
+        },
+
+       
+    },
+    computed:{
+        // sortNotes() {
+        //     var sortedNotes = { pinned: [], notPinned: [] }
+        //     this.notes.forEach(note => {
+        //         console.log(note.isPinned)
+        //         if (note.isPinned) sortedNotes.pinned.push(note)
+        //         else sortedNotes.notPinned.push(note)
+        //     })
+        //     return sortedNotes
+        // },
+        displayPinned(){
+           var pinned = this.notes.filter(note => note.isPinned)
+           console.log('pinned',pinned)
+           return pinned
+        },
+        displayUnPinned(){
+           var pinned = this.notes.filter(note => !note.isPinned)
+           console.log('unPinned', pinned)
+           return pinned
         }
 
     },
     created() {
-        console.log(this.notes)
+        // this.sortNotes()
+        console.log('notes to display',this.notes)
     },
     components: {
         toDo,

@@ -7,7 +7,7 @@ export default{
             <header>
                 <button class="btn delete" @click="deleteTodo"><i class="far fa-trash-alt"></i></button>
                 <button class="btn edit" @click="editTodo" > <i class="fas fa-pencil-alt"></i></button>
-                <button class="btn pin " @click="pinTextbox" > <i class="fas fa-thumbtack"></i></button>
+                <button class="btn pin " @click="pinTodo" > <i class="fas fa-thumbtack"></i></button>
             </header>
             <div class="note-content">
             <ul>
@@ -27,8 +27,9 @@ export default{
        editTodo(){
             this.$emit('editNote', this.note)
        },
-       pinTextbox(){
-        console.log('pinned')
+       pinTodo(){
+        this.$emit('pin', this.note)
+        // console.log('pinned')
     }
     },
     computed:{

@@ -17,7 +17,7 @@
 }
 
 .add-note.todo{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction:column  ;
    
@@ -42,6 +42,7 @@
 .add-note button{
     height: 50px;
     width: 100px;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
+    border: 2px solid black;
 }
 

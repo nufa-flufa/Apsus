@@ -1,5 +1,5 @@
 'use strict'
-import {storageService} from '../../../service/async-storage.service.js'
+import { storageService } from '../../../service/async-storage.service.js'
 export const keepService = {
     getNotes,
     getByType,
@@ -8,35 +8,40 @@ export const keepService = {
     saveNote,
     getById,
     updateNote,
+    // sortNote
 }
 
 const NOTES_KEY = 'notes'
 
-function getNotes(){
-   return storageService.query(NOTES_KEY)
-        .then(notes=>{
-            if(!notes || !notes.length) {
+function getNotes() {
+    return storageService.query(NOTES_KEY)
+        .then(notes => {
+            if (!notes || !notes.length) {
+               
                 storageService.postMany(NOTES_KEY, gNotes)
                 return gNotes
             }
-            else return notes
+            else {
+
+                return notes
+            }
         })
 }
 
-function saveNote(note){
-   return storageService.post(NOTES_KEY, note)
+function saveNote(note) {
+    return storageService.post(NOTES_KEY, note)
 }
 
-function updateNote(editNote){
+function updateNote(editNote) {
     return storageService.put(NOTES_KEY, editNote)
 }
 
-function getByType(type){
+function getByType(type) {
     console.log('loca service getByType:', type)
     return survey.cmps.find(cmp => cmp.type === type)
 }
-function getById(noteId){
-    return storageService.get( NOTES_KEY,noteId)
+function getById(noteId) {
+    return storageService.get(NOTES_KEY, noteId)
 }
 function makeId(length = 5) {
     var text = "";
@@ -46,37 +51,47 @@ function makeId(length = 5) {
     }
     return text;
 }
-function deleteNote(noteId){
-        return storageService.remove(NOTES_KEY, noteId)
+function deleteNote(noteId) {
+    return storageService.remove(NOTES_KEY, noteId)
 
 }
 
+// function sortNote(note) {
+//     return getNotes()
+//         .then(notes => {
+//             console.log('first appearnce',notes)
+//             if (note.isPinned) {
+//                 let idx = notes.pinned.findIndex(pinnedNote => pinnedNote.id === note.id)
+//                 notes.notPinned.push(note)
+//                 notes.pinned.splice(idx, 1)
+//             } else {
+//                 console.log(note.id)
+//                 // console.log(notes.notPinned)
+//                 let idx = notes.notPinned.findIndex(simpleNote => simpleNote.id === note.id)
+//                 notes.pinned.push(note)
+//                 notes.notPinned.splice(idx, 1)
+//             }
+//             storageService._save(NOTES_KEY, notes)
+//         })
+// }
+
 
 var gNotes = [
+
     {
-        id:'j101',
+        id: 'j101',
         type: "textBox",
-        isPinned: true,
+        isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
         }
     },
-    // {
-        // id:'j102',
-    //     type: "NoteImg",
-    //     info: {
-    //         url: "http://some-img/me",
-    //         title: "Me playing Mi"
-    //     },
-    //     style: {
-    //         backgroundColor: "#00d"
-    //     }
-    // },
+
     {
-        id:'j103',
+        id: 'j103',
         type: "to-do",
+        isPinned: false,
         info: {
-            // label: "How was it:",
             todos: [
                 { txt: "Do that", doneAt: null },
                 { txt: "Do this", doneAt: 187111111 }

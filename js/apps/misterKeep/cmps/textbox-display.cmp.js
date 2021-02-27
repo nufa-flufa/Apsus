@@ -23,19 +23,14 @@ export default{
 
     methods:{
         deleteTextbox(){
-          
-            this.$emit('deleteNote', this.note)
-            
+            this.$emit('deleteNote', this.note)  
         },
         editTextbox(){
             this.$emit('editNote', this.note)
        },
        pinTextbox(){
-           console.log('pinned')
+           this.$emit('pin', this.note)
        }
     },
-  
-   
-    created(){
-    }
+
 }

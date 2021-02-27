@@ -4,11 +4,13 @@
 
 body {
     margin: 0;
+    font-family: noto-sans-medium;
 }
 
 ul{
     padding: 0;
 }
+
 
 /* HELPERS */
 .btn {
