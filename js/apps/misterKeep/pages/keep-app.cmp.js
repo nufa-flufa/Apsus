@@ -56,6 +56,7 @@ export default {
                 .then(() => this.loadNotes())
         },
         editNote(noteId) {
+            console.log(noteId);
             keepService.getById(noteId)
                 .then(note => {
                     this.getType(note.type)

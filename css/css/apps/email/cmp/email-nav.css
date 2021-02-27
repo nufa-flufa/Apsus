@@ -16,3 +16,10 @@
     
     border-right: 2px solid rgba(56, 56, 56,0.2);
 }
+
+.mail-btn-container{
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
