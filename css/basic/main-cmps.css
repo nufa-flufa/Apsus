@@ -42,13 +42,24 @@ nav {
 
 nav a {
     text-decoration: none;
-    transition: transform .2s;
-    /* Animation */
 }
 
 nav a:hover {
-    transform: scale(10);
+    animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
 
 nav a:visited {
     text-decoration: none;
