@@ -1,5 +1,7 @@
 'use strict'
-import { storageService } from '../../../service/async-storage.service.js'
+import {
+    storageService
+} from '../../../service/async-storage.service.js'
 export const keepService = {
     getNotes,
     getByType,
@@ -17,12 +19,9 @@ function getNotes() {
     return storageService.query(NOTES_KEY)
         .then(notes => {
             if (!notes || !notes.length) {
-               
                 storageService.postMany(NOTES_KEY, gNotes)
                 return gNotes
-            }
-            else {
-
+            } else {
                 return notes
             }
         })
@@ -40,9 +39,11 @@ function getByType(type) {
     console.log('loca service getByType:', type)
     return survey.cmps.find(cmp => cmp.type === type)
 }
+
 function getById(noteId) {
     return storageService.get(NOTES_KEY, noteId)
 }
+
 function makeId(length = 5) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -51,6 +52,7 @@ function makeId(length = 5) {
     }
     return text;
 }
+
 function deleteNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
 
@@ -64,7 +66,6 @@ var gNotes = [
         title:'',
         isPinned: false,
         color:'blue',
-        
         info: {
             txt: "Fullstack Me Baby!"
         }
@@ -74,11 +75,16 @@ var gNotes = [
         type: "to-do",
         title:'',
         isPinned: false,
-        color:'blue',
+        color: 'blue',
         info: {
-            todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+            todos: [{
+                    txt: "Do that",
+                    doneAt: null
+                },
+                {
+                    txt: "Do this",
+                    doneAt: 187111111
+                }
             ]
         }
     },
@@ -157,11 +163,9 @@ var gNotes = [
 
 ];
 
-var survey =
-{
+var survey = {
     title: 'Robots Shopping',
-    cmps: [
-        {
+    cmps: [{
             type: 'textBox',
             info: {
                 label: 'Simple Note',

@@ -37,7 +37,7 @@
     line-height: 1.9;
 }
 
-.footer{
+.footer {
     text-align: center;
 }
 
@@ -45,30 +45,39 @@
     0% {
         background: #29306a;
     }
+
     15% {
         background: #515392;
     }
+
     30% {
         background: #7A79BC;
     }
+
     45% {
         background: #A4A1E8;
     }
+
     50% {
-        background:#A7A4EA;
+        background: #A7A4EA;
     }
+
     55% {
         background: #A7A4EA;
     }
+
     60% {
         background: #A4A1E8;
     }
+
     75% {
         background: #7A79BC;
     }
+
     90% {
         background: #515392;
     }
+
     100% {
         background: #29306a;
     }
