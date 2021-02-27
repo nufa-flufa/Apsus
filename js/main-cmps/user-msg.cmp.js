@@ -15,6 +15,8 @@ export default {
     methods: {
         setMsg(msg) {
             this.msg = msg
+            // swal(this.msg.txt)
+            this.msg = msg
             setTimeout(() => {
                 this.msg = null
             }, 3000);
