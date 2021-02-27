@@ -1,0 +1,121 @@
+/* FILTER */
+
+.book-filter {
+    background-color: #00303F;
+    color: #E6F4F1;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+/* LIST */
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.review-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* PREVIEW */
+
+.book-preview-container {
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    justify-content: space-between;
+    background-color: rgb(193, 229, 231);
+    border-radius: 15px;
+}
+
+.small-img {
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* DETAILS */
+
+.book-details {
+    background-color: lightblue;
+    /*height: 90vh;*/
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    word-wrap: break-word;
+    font-size: 1.5em;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-span {
+    font-size: 1.5em;
+}
+
+.detail-img {
+    height: fit-content;
+}
+
+.small-btn {
+    width: 75px;
+}
+
+.low {
+    color: green;
+}
+
+.high {
+    color: red;
+}
+
+.sale {
+    background-color: rgb(167, 23, 23);
+    color: antiquewhite;
+    font-size: 2.2em;
+    width: fit-content;
+}
+
+/* EDIT */
+
+.book-edit {
+    padding: 10px;
+    margin: 10px;
+}
+
+/* BOOK REVIEW */
+.review-rate li::after {
+    content: '☆';
+}
+
+.review-rate li.fill::after {
+    content: '★';
+}
+
+@media screen and (max-width:700px) {
+    .book-details {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,26 +1,28 @@
-@font-face{
+@font-face {
     font-family: luckiest-guy;
-    src:url('../font/LuckiestGuy-Regular.ttf')
+    src: url('../font/LuckiestGuy-Regular.ttf')
 }
-@font-face{
-    font-family: noto-sans-medium; /* Font for body */
+
+@font-face {
+    font-family: noto-sans-medium;
+    /* Font for body */
     src: url('../font/NotoSansJP-Medium.otf');
 }
 
-.app-container{
+.app-container {
     display: grid;
-    grid-template-rows: 70px 1fr 30px ;
+    grid-template-rows: 70px 1fr 30px;
 }
 
 .app-header {
     grid-row: 1/2;
     background-color: #E6F4F1;
-    color:#00303F;
+    color: #00303F;
     box-shadow: 4px -2px 15px #00303f87;
     /* z-index: -1; */
 }
 
-.main-nav{
+.main-nav {
     display: flex;
     width: 1300px;
     margin: auto;
@@ -29,19 +31,36 @@
     z-index: 5;
 }
 
-.logo{
+.logo {
     font-family: luckiest-guy;
     font-size: 3rem;
 }
-nav{
+
+nav {
     font-size: 20px;
 }
 
-.active-link {
-    color:#00303F;
+nav a {
+    text-decoration: none;
+    transition: transform .2s;
+    /* Animation */
 }
+
+nav a:hover {
+    transform: scale(10);
+}
+
+nav a:visited {
+    text-decoration: none;
+    color: #949a9c;
+}
+
+.active-link {
+    color: #00303F !important;
+}
+
 /* .main-screen{ */
-    
+
 
 /* FOOTER */
 footer {
@@ -51,6 +70,6 @@ footer {
     bottom: 0;
     height: 50px;
     background-color: #E6F4F1;
-    color:#00303F;
+    color: #00303F;
     box-shadow: 1px 4px 13px #00303F;
 }
