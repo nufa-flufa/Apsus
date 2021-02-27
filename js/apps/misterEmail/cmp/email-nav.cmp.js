@@ -53,5 +53,9 @@ export default {
     },
     mounted(){
         this.progressBar();
-    }
+    },
+    destroyed(){
+        clearInterval(this.interval);
+        this.interval = null;
+    },
 }
