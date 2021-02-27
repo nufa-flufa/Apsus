@@ -41,7 +41,7 @@ export default {
                         });
                         this.$emit('delete', note.id)
                     } else {
-                        swal("No Worries, Your note is safe!");
+                        swal("No worries, Your note is safe!");
                     }
                 });
         },

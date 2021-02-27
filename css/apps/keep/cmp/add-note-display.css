@@ -37,12 +37,12 @@
 }
 .add-note textarea{
     width: 30%;
+    height: 250px;
 }
 
 .add-note button{
     height: 50px;
     width: 100px;
-    /* background-color: lightgreen; */
     border: 2px solid black;
 }
 

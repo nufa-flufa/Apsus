@@ -1,5 +1,4 @@
 .notes-display{
-    width: 100%;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -8,14 +7,17 @@
 }
 
 .notes-display .pinned{
-    /* background-color: lightpink; */
     display: flex;
     flex-wrap: wrap-reverse;
-    columns: auto auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .notes-display .not-pinned{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .seperator{

@@ -42,12 +42,12 @@ export default {
                 note.id = this.noteEdit
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
-                    swal('Your Note Has Been Edited')
+                    .then(swal('Your note has been edited'))
 
             } else {
                 keepService.saveNote(note)
                     .then(note => this.loadNotes())
-                    swal('Your Note Has Been Saved')
+                    .then(swal('Your note has been saved'))
             }
             this.noteType = null;
             this.noteEdit = null;
@@ -64,10 +64,10 @@ export default {
                     this.noteEdit = noteId
                 })
         },
-        saveChanges(note){
+        saveChanges(note) {
             keepService.updateNote(note)
         },
-        setFilter(filter){
+        setFilter(filter) {
             this.filterBy = filter
             console.log('changed', this.filterBy)
         },
@@ -78,13 +78,13 @@ export default {
 
     },
     computed: {
-        displayNotes(){
-            if(this.filterBy === 'all') return this.notes;
+        displayNotes() {
+            if (this.filterBy === 'all') return this.notes;
             const notesToShow = this.notes.filter(note => note.type === this.filterBy)
-            console.log('display notes result',notesToShow)
+            console.log('display notes result', notesToShow)
             return notesToShow
         },
-       
+
 
     },
     created() {

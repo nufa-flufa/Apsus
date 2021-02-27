@@ -58,41 +58,22 @@ function deleteNote(noteId) {
 
 }
 
-// function sortNote(note) {
-//     return getNotes()
-//         .then(notes => {
-//             console.log('first appearnce',notes)
-//             if (note.isPinned) {
-//                 let idx = notes.pinned.findIndex(pinnedNote => pinnedNote.id === note.id)
-//                 notes.notPinned.push(note)
-//                 notes.pinned.splice(idx, 1)
-//             } else {
-//                 console.log(note.id)
-//                 // console.log(notes.notPinned)
-//                 let idx = notes.notPinned.findIndex(simpleNote => simpleNote.id === note.id)
-//                 notes.pinned.push(note)
-//                 notes.notPinned.splice(idx, 1)
-//             }
-//             storageService._save(NOTES_KEY, notes)
-//         })
-// }
-
-
 var gNotes = [
 
     {
         id: 'j101',
         type: "textBox",
+        title:'',
         isPinned: false,
-        color: 'blue',
+        color:'blue',
         info: {
             txt: "Fullstack Me Baby!"
         }
     },
-
     {
         id: 'j103',
         type: "to-do",
+        title:'',
         isPinned: false,
         color: 'blue',
         info: {
@@ -106,7 +87,80 @@ var gNotes = [
                 }
             ]
         }
-    }
+    },
+    {
+        id: 'j104',
+        type: "to-do",
+       
+        isPinned: true,
+        color:'blue',
+        info: {
+            title:'To-Dos for the week',
+            todos: [
+                { txt: "Buy milk", doneAt: null },
+                { txt: "Clean the house", doneAt: null },
+                { txt: "Take the cat for a walk", doneAt: null },
+                { txt: "Call Bibi", doneAt: null },
+
+            ]
+        }
+    },
+    {
+        id: 'j105',
+        type: "textBox",
+        isPinned: false,
+        color:'green',
+        title:'',
+        info: {
+            txt: "What Do you call someone that dosen't fart in public? \n a private tutor"
+        }
+    },
+    {
+        type: 'video-note',
+        isPinned: false,
+        color:'blue',
+        info: {
+            title: '',
+            vidUrl: 'https://www.youtube.com/embed/3OC2aPCuzjo',
+        }
+    },
+    {
+        type: 'video-note',
+        isPinned: false,
+        color:'blue',
+        info: {
+            title: 'הראל סקעת המלך',
+            vidUrl: 'https://www.youtube.com/embed/AcpgsbFvnbM',
+        }
+    },
+    {
+        type: 'video-note',
+        isPinned: false,
+        color:'blue',
+        info: {
+            title: 'לא לשכוח לראות',
+            vidUrl: 'https://www.youtube.com/embed/zuCsnK5c9jY',
+        }
+    },
+    {
+        type: 'video-note',
+        isPinned: true,
+        color:'white',
+        info: {
+            title: '',
+            imgUrl: 'https://cdn.vox-cdn.com/thumbor/NoYZ8hcQ2y-aTJfq5qc03moWeD0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/16022155/A_Consensus_sm.jpg',
+        }
+    },
+    {
+        type: 'video-note',
+        isPinned: false,
+        color:'pink',
+        info: {
+            title: 'last ski trip',
+            imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx5Y0wtvbzEzTZuBRhc-30w_cZ9-RfjhHNMA&usqp=CAU',
+        }
+    },
+
 ];
 
 var survey = {
@@ -121,26 +175,15 @@ var survey = {
             type: 'to-do',
             info: {
                 label: 'Write your To Do\'s',
-                opts: ['Great', 'Fine', 'Crap', 'Worst Ever']
             }
         },
 
         {
             type: 'videoNote',
-            info: {
-                label: 'Quality:',
-                max: 5
-            }
         },
         {
             type: 'imageNote',
-            info: {
-                label: 'Tune your photo:',
-                // imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1557175588/Robots/Crypto-robots.jpg'
-                imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1547889015/Robots/spotmini-975475584.jpg'
-                // imgUrl: 'https://res.cloudinary.com/daahi2yaz/image/upload/v1555521791/Robots/maxresdefault.jpg'
-                // imgUrl: 'https://res.cloudinary.com/demo/image/upload/lady.jpg'
-            }
+            
         },
 
     ]

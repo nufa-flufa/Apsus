@@ -3,7 +3,7 @@
     height: 89vh;
     margin: 0 auto;
     animation-name: animate;
-    animation-duration: 7s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     display: flex;
@@ -47,19 +47,35 @@
     }
 
     15% {
-        background: #0d00be;
+        background: #515392;
     }
 
     30% {
-        background: #4c9ab6;
+        background: #7A79BC;
+    }
+
+    45% {
+        background: #A4A1E8;
     }
 
     50% {
-        background: #3b65b3;
+        background: #A7A4EA;
+    }
+
+    55% {
+        background: #A7A4EA;
+    }
+
+    60% {
+        background: #A4A1E8;
     }
 
     75% {
-        background: #005762;
+        background: #7A79BC;
+    }
+
+    90% {
+        background: #515392;
     }
 
     100% {
