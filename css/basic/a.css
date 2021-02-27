@@ -23,7 +23,9 @@ ul{
     border: none;
 }
 
-
+input{
+    cursor: pointer;
+}
 
 .swal-modal .swal-text{
     font-size: 1.2rem;
