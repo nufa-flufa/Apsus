@@ -5,7 +5,7 @@ import noteFilter from '../cmps/note-filter.cmp.js'
 
 export default {
     template: `
-    <section class="keep-app">
+    <section class="keep-app main">
         <div class="add-note-zone">
             <button class="btn" @click="getType('textBox')"><i class="fas fa-sticky-note"></i> Note</button>
             <button  class="btn" @click="getType('to-do')"> <i class="fas fa-tasks"></i>ToDo</button>

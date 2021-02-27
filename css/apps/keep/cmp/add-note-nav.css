@@ -18,6 +18,7 @@
 }
 .add-note-zone .btn:hover{
     background-color:  rgb(142, 191, 194);
+    color: #E6F4F1;
 }
 
 .fas .fa-sticky-note{
