@@ -5,7 +5,8 @@ export default {
               <label>
                   {{info.label}}
               </label>
-                <form @submit.prevent="saveTodo(val)">  
+                <form @submit.prevent="saveTodo(val)">
+                <input type="text" placeholder="Give a Title to Your Note" v-model="note.info.title" /> 
                     <input type=text placeholder='Write your To Do here' v-model="val" />
                     <button class="btn">Add to list</button>
                 </form>
@@ -24,7 +25,10 @@ export default {
             note: {
             type: 'to-do',
             isPinned: false,
-             info: {todos:[]}
+            color:'blue',
+             info: {
+                 title:'',
+                 todos:[]}
             }
         };
     },

@@ -7,12 +7,16 @@ export default {
     props: ['notes'],
     template: `
     <section class="notes-display">
-        <div v-if="notes" v-for="note in displayPinned" class="pinned">
-           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote"></component>
+        <div class="pinned">
+            <div v-if="notes" v-for="note in displayPinned" >
+                <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote" @colorChange="saveNoteClass"></component>
+            </div>
         </div>
-        <br>
-        <div v-if="notes" v-for="note in displayUnPinned" class="not-pinned">
-           <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote"></component>
+        <div class="seperator"></div>
+        <div  class="not-pinned" >
+            <div v-if="notes" v-for="note in displayUnPinned">
+                <component :is="note.type" :note="note" @deleteNote="deleteNote" @editNote="editNote" @pin="sortNote"  @colorChange="saveNoteClass"></component>
+            </div>
         </div>
     </section>
     `,
@@ -27,7 +31,7 @@ export default {
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this note",
                 icon: "warning",
-                buttons: true,
+                buttons: ['Cancel','I\'m Sure'],
                 dangerMode: true,
             })
                 .then((willDelete) => {
@@ -52,19 +56,14 @@ export default {
             console.log( note.isPinned)
             this.$emit('save-changes', note)
         },
+        saveNoteClass(note){
+            console.log('hello')
+            this.$emit('save-changes', note)
+        }
 
        
     },
     computed:{
-        // sortNotes() {
-        //     var sortedNotes = { pinned: [], notPinned: [] }
-        //     this.notes.forEach(note => {
-        //         console.log(note.isPinned)
-        //         if (note.isPinned) sortedNotes.pinned.push(note)
-        //         else sortedNotes.notPinned.push(note)
-        //     })
-        //     return sortedNotes
-        // },
         displayPinned(){
            var pinned = this.notes.filter(note => note.isPinned)
            console.log('pinned',pinned)

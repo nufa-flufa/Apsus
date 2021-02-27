@@ -22,3 +22,7 @@ ul{
     width: 30px;
     border: none;
 }
+
+.swal-modal .swal-text{
+    font-size: 1.3rem;
+}

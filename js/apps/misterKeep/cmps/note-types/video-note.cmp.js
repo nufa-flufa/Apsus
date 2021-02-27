@@ -17,6 +17,7 @@ export default {
             note: {
                 type: 'video-note',
                 isPinned: false,
+                color:'blue',
                 info: {
                     title: '',
                     vidUrl: '',

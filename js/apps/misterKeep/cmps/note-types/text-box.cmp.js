@@ -6,7 +6,7 @@ export default {
               <label>
               {{info.label}}
                 </label>  
-                <input type="text" placeholder="give a title to your note" v-model="note.info.title" /> 
+                <input type="text" placeholder="Give a Title to Your Note" v-model="note.info.title" /> 
                 <textarea  placeholder=""  rows="15"
                   cols="30" v-model="val" :list="listId" required >
               </textarea>
@@ -20,6 +20,7 @@ export default {
             note: {
                 type: 'textBox',
                 isPinned: false,
+                color:'blue',
                 info: {
                     title:'',
                     txt: '',

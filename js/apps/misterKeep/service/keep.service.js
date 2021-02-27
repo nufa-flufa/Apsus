@@ -82,6 +82,7 @@ var gNotes = [
         id: 'j101',
         type: "textBox",
         isPinned: false,
+        color:'blue',
         info: {
             txt: "Fullstack Me Baby!"
         }
@@ -91,6 +92,7 @@ var gNotes = [
         id: 'j103',
         type: "to-do",
         isPinned: false,
+        color:'blue',
         info: {
             todos: [
                 { txt: "Do that", doneAt: null },

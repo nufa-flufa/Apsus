@@ -21,6 +21,7 @@ export default {
             note: {
                 type: 'image-note',
                 isPinned: false,
+                color:'blue',
                 info: {
                     title: '',
                     imgUrl: '',

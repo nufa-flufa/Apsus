@@ -7,8 +7,6 @@
     background-color: rgb(193, 229, 231);
     box-shadow: 0px 4px 9px 0px #00303f6e;
     text-align: start;
-    display: flex;
-    flex-direction: column;
     overflow: auto;
     line-height: 2rem;
     margin:10px;
@@ -23,7 +21,7 @@
     justify-content: space-between;
     width: 100%;
     background-color: rgb(142, 191, 194);
-    box-shadow: 0px 4px 9px 0px #00303f6e;
+    
     padding-left: 20px ;
 }
 .todo li{
@@ -46,7 +44,6 @@
     color: rgb(236, 230, 230);
 }
 
-
 .fas .fa-pencil-alt{
     background: f303;
 }
@@ -56,8 +53,6 @@
 .fas .fa-thumbtack{
     background: f08d;
 }
-
-
 .note .done{
     text-decoration: line-through;
 }
@@ -66,3 +61,75 @@
     display: flex;
     flex-direction: column;
 }
+
+.note-colors{
+    display: flex;
+    width: 100%;  
+    box-shadow: 0px 4px 9px 0px #00303f6e;
+}
+.color{
+    cursor: pointer;
+    height: 15px;
+    width: 25%;
+}
+.color.blue{
+    background-color: rgb(193, 229, 231);
+}
+.note.blue{
+    background-color: rgb(193, 229, 231);
+}
+.note.blue header{
+    background-color: rgb(142, 191, 194);
+}
+
+.color.yellow{
+    background-color: rgb(243, 242, 165);
+}
+.note.yellow{
+    background-color: rgb(243, 242, 165);
+}
+.note.yellow header{
+    background-color: rgb(214, 212, 103);
+}
+
+.color.pink{
+    background-color: pink;
+}
+.note.pink header{
+    background-color: rgb(187, 115, 127);
+}
+.note.pink{
+    background-color: pink;
+}
+
+.color.green{
+    background-color: rgb(199, 255, 204);
+}
+.note.green header{
+    background-color: rgb(116, 177, 121);
+}
+.note.green{
+    background-color: rgb(199, 255, 204);
+}
+
+.color.gray{
+    background-color: rgb(214, 214, 214);
+}
+.note.gray header{
+    background-color: rgb(119, 119, 119);
+}
+.note.gray{
+    background-color: rgb(214, 214, 214);
+}
+
+.color.white{
+    background-color: whitesmoke;
+}
+.note.white header{
+    background-color: rgb(214, 214, 214);
+}
+.note.white{
+    background-color:whitesmoke ;
+}
+
+

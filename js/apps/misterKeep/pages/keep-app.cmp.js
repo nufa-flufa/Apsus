@@ -6,7 +6,7 @@ import noteFilter from '../cmps/note-filter.cmp.js'
 export default {
     template: `
     <section class="keep-app">
-        <div class="add-zone">
+        <div class="add-note-zone">
             <button class="btn" @click="getType('textBox')"> Click for Note</button>
             <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
             <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
@@ -14,7 +14,7 @@ export default {
             <note-filter @filter="setFilter" />
         </div>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote" @close-modal="closeAddModal"/>
-        <notes-display  v-if="notes" :notes="displayNotes" @delete="deleteNote" @edit="editNote" @save-changes="savePinStatus"/>
+        <notes-display  v-if="notes" :notes="displayNotes" @delete="deleteNote" @edit="editNote" @save-changes="saveChanges"/>
     </section>
     `,
     data() {
@@ -42,11 +42,12 @@ export default {
                 note.id = this.noteEdit
                 keepService.updateNote(note)
                     .then(note => this.loadNotes())
-                    swal('Your Note has been edited')
+                    swal('Your Note Has Been Edited')
 
             } else {
                 keepService.saveNote(note)
                     .then(note => this.loadNotes())
+                    swal('Your Note Has Been Saved')
             }
             this.noteType = null;
             this.noteEdit = null;
@@ -63,7 +64,7 @@ export default {
                     this.noteEdit = noteId
                 })
         },
-        savePinStatus(note){
+        saveChanges(note){
             keepService.updateNote(note)
         },
         setFilter(filter){

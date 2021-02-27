@@ -17,12 +17,12 @@
     background-color: #E6F4F1;
     color:#00303F;
     box-shadow: 4px -2px 15px #00303f87;
-    margin-bottom:20px ;
+    z-index: -1;
 }
 
 .main-nav{
     display: flex;
-    width: 1200px;
+    width: 1300px;
     margin: auto;
     align-items: center;
     justify-content: space-between;
