@@ -20,6 +20,7 @@ export default {
             img: '',
             note: {
                 type: 'image-note',
+                title:'',
                 isPinned: false,
                 color:'blue',
                 info: {
@@ -31,22 +32,9 @@ export default {
     },
     methods: {
         reportVal() {
-            // this.note.info.imgUrl = val
             this.$emit("setVal", this.note);
           
         },
 
     },
-    computed: {
-        //     drawImg() {
-        //         const img = new Image();
-        //         img.src = this.img.url
-        //         img.onload = () => {
-        //             // var canvasHeight = getHeightRatio(gElCanvas.width, img.height, img.width);
-        //             // gElCanvas.height = canvasHeight;
-        //             gCtx.drawImage(this.img, 0, 0, 100, 100);
-        //             // drawText();
-        //         }
-        //     }
-    }
 };

@@ -9,6 +9,7 @@
 }
 
 .close{
+    cursor: pointer;
     float: right;
     width: 40px;
     height: 40px;
@@ -17,10 +18,8 @@
 }
 
 .add-note.todo{
-    /* background-color: aqua; */
     display: flex;
-    flex-direction:column  ;
-   
+    flex-direction:column;
     align-items: center; 
 }
 
@@ -37,7 +36,8 @@
 }
 .add-note textarea{
     width: 30%;
-    height: 250px;
+    height: 200px;
+    margin-bottom: 10px;
 }
 
 .add-note button{

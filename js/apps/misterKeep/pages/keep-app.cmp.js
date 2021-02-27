@@ -7,10 +7,10 @@ export default {
     template: `
     <section class="keep-app">
         <div class="add-note-zone">
-            <button class="btn" @click="getType('textBox')"> Click for Note</button>
-            <button  class="btn" @click="getType('to-do')"> Click for ToDo</button>
-            <button  class="btn" @click="getType('imageNote')"> Click for Img</button>
-            <button  class="btn" @click="getType('videoNote')"> Click for Video</button>
+            <button class="btn" @click="getType('textBox')"><i class="fas fa-sticky-note"></i> Note</button>
+            <button  class="btn" @click="getType('to-do')"> <i class="fas fa-tasks"></i>ToDo</button>
+            <button  class="btn" @click="getType('imageNote')"><i class="fas fa-camera-retro"></i> Img</button>
+            <button  class="btn" @click="getType('videoNote')"><i class="fab fa-youtube"></i>Video</button>
             <note-filter @filter="setFilter" />
         </div>
         <note-add v-if="noteType" :noteType="noteType" @keep-note="keepNote" @close-modal="closeAddModal"/>
