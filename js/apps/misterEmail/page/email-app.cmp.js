@@ -10,7 +10,7 @@ import {
 
 export default {
     template: `
-        <section class="main-screen mail-app"><!-- mail-container -->
+        <section class="main-screen main mail-app"><!-- mail-container -->
             <email-list :mails="mailsToShow" @remove="removeMail" @stared="stared" @setSort="setSort"/><!-- email list --> 
             <email-nav v-if="statistic" :statistic="getStatistic"  @filter="setFilter" @openMail="toggleMail"/><!-- NAV -->
             <email-send v-if="sending" @send="sendMail" />

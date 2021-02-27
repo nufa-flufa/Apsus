@@ -12,9 +12,36 @@
     justify-content: space-between;
 }
 
+.search-bar{
+    display: flex;
+}
+
+.search-bar input{
+    height: 30px;
+    width: 300px;
+    border-radius: 2rem;
+    text-align: center;
+    font-family: noto-sans-medium;
+    margin: 0 10px 10px 10px;
+    padding: 3px;
+}
+
+.search-bar select{
+    height: 30px;
+    width: 300px;
+    border-radius: 2rem;
+    text-align: center;
+    font-family: noto-sans-medium;
+    margin: 0 10px 10px 10px;
+    padding: 3px;
+}
+
 .mail-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
     width: 80%;
+    margin: auto;
 }
 
 .world {
@@ -28,6 +55,7 @@
     background-color: rgb(193, 229, 231);
     font-size: 0.8em;
     height: 4em;
+    width: 100%;
 }
 
 .mail-preview-container:hover {
@@ -46,16 +74,7 @@
     font-weight: bold;
 }
 
-.add-mail-modal {
-    background-color: #E6F4F1;
-    position: absolute;
-    bottom: 50px;
-    right: 2%;
-    width: 800px;
-    height: 40%;
-    z-index: 10;
-    border: 1px solid black;
-}
+
 
 .from {
     width: 20%;
