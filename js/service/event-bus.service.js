@@ -20,6 +20,3 @@ eventBus.$on('mailToNote', (val) => {
     }
     keepService.saveNote(note);
 })
-/*eventBus.$on('puk', (val) => {
-    console.log('Puk Happened', val)
-})*/

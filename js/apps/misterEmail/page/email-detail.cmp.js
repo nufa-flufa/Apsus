@@ -18,23 +18,26 @@ export default {
         </div>
         <div class="mail-body">
             <pre>{{mail.body}}</pre>
+            
         </div>
         <div v-if="isReply" class="reply-msg">
-            <textarea v-model="mail.body" class="mail-body"></textarea>
+            <textarea v-model="replyTxt" class="mail-body"></textarea>
             <div>
                 <button @click="send">Send reply</button>
                 <button @click="moveToNotes">Move to notes</button>
                 <button @click="deleteMail">Delete mail</button>
             </div>
         </div>
-        <button @click="reply">More Options</button>
     </section>
 `,
     data() {
         return {
             mail: null,
-            isReply: false,
+            isReply: true,
             isEdit: false,
+            replyTxt:`
+            //Re-Answer -- write your answer below this line
+            `,
         }
     },
     methods: {
@@ -65,24 +68,15 @@ export default {
                     mailService.save(this.mail);
                 })
         },
-        reply() {
-            this.isReply = !this.isReply;
-            if (!this.isEdit) {
-                this.mail.body += `
-            
-            //Re-Answer -- write your answer below this line
-            
-            `
-                this.isEdit = true;
-            }
-        },
         send() {
-            const reMail = mailService.getEmptyMail()
-            reMail.body = this.mail.body;
+            console.log('send');
+            const reMail = mailService.getEmptyMail();
+            reMail.body = this.mail.body+this.replyTxt;
             reMail.to = [].push(this.mail.from);
             reMail.subject = 'Re\\ ' + this.mail.subject;
             reMail.sentAt = Date.now();
             mailService.save(reMail).then(() => {
+                console.log('sent');
                 this.$router.push('/mail');
                 const msg = {
                     txt: 'Reply sent',
